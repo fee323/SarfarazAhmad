@@ -4,95 +4,93 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Sarfaraz Ahmad — Full Stack Developer & Team Lead</title>
-<meta name="description" content="Sarfaraz Ahmad — Full Stack Developer & Team Lead with 5+ years in ERP, Laravel, Flutter, and Power BI."/>
+<meta name="description" content="Sarfaraz Ahmad — Full Stack Developer & Team Lead. 5+ years in ERP, Laravel, Flutter, Power BI."/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-/* ═══════════════════════════════════════
-   THEME TOKENS
-═══════════════════════════════════════ */
-:root {
+/* ══════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════ */
+:root{
   --fh:'Syne',sans-serif;
   --fb:'Space Grotesk',sans-serif;
   --fm:'DM Mono',monospace;
   --ease:cubic-bezier(0.16,1,0.3,1);
+  --ease2:cubic-bezier(0.4,0,0.2,1);
 }
 [data-theme="dark"]{
-  --bg:#07070a; --bg1:#0d0d13; --bg2:#121219; --bg3:#18181f;
-  --glass:rgba(255,255,255,.03);
-  --bd:rgba(255,255,255,.07); --bd2:rgba(255,255,255,.13);
-  --tx:#eeeef5; --tx2:#7a7a94; --tx3:#3a3a50;
+  --bg:#07070b;--bg1:#0e0e16;--bg2:#14141e;--bg3:#1c1c28;
+  --glass:rgba(255,255,255,.035);
+  --bd:rgba(255,255,255,.08);--bd2:rgba(255,255,255,.14);
+  --tx:#eeeef8;--tx2:#7878a0;--tx3:#38384e;
+  --shadow:rgba(0,0,0,.6);
 }
 [data-theme="light"]{
-  --bg:#f5f5f0; --bg1:#eeede8; --bg2:#e5e4dd; --bg3:#dddbd3;
-  --glass:rgba(0,0,0,.03);
-  --bd:rgba(0,0,0,.08); --bd2:rgba(0,0,0,.15);
-  --tx:#0f0f18; --tx2:#5a5a72; --tx3:#aaaabc;
+  --bg:#f3f3ee;--bg1:#eae9e2;--bg2:#e0dfd8;--bg3:#d5d4cc;
+  --glass:rgba(0,0,0,.025);
+  --bd:rgba(0,0,0,.09);--bd2:rgba(0,0,0,.16);
+  --tx:#0e0e18;--tx2:#58587a;--tx3:#b0b0c8;
+  --shadow:rgba(0,0,0,.18);
 }
 [data-accent="cyan"]  {--ac:#00f5c8;--ar:0,245,200;  --ad:#00c49e;}
 [data-accent="pink"]  {--ac:#ff3d8a;--ar:255,61,138; --ad:#cc1f65;}
 [data-accent="gold"]  {--ac:#f5c518;--ar:245,197,24; --ad:#c49a00;}
 [data-accent="violet"]{--ac:#9b5de5;--ar:155,93,229; --ad:#7440b8;}
 [data-accent="lime"]  {--ac:#a3e635;--ar:163,230,53; --ad:#7ab82a;}
-[data-radius="sharp"]{--r:2px; --r2:4px; --r3:8px;}
-[data-radius="soft"] {--r:8px; --r2:14px;--r3:22px;}
+[data-radius="sharp"]{--r:2px;--r2:4px;--r3:8px;}
+[data-radius="soft"] {--r:8px;--r2:14px;--r3:22px;}
 [data-radius="round"]{--r:18px;--r2:26px;--r3:40px;}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    BASE
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);color:var(--tx);
-  font-family:var(--fb);overflow-x:hidden;
-  transition:background .5s var(--ease),color .5s var(--ease);
-}
+body{background:var(--bg);color:var(--tx);font-family:var(--fb);overflow-x:hidden;transition:background .5s var(--ease),color .5s var(--ease);}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
-::selection{background:rgba(var(--ar),.22);}
+button{font-family:var(--fb);}
+::selection{background:rgba(var(--ar),.25);}
 ::-webkit-scrollbar{width:2px;}
 ::-webkit-scrollbar-thumb{background:var(--ac);}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    PROGRESS BAR
-═══════════════════════════════════════ */
-#bar{
-  position:fixed;top:0;left:0;height:2px;z-index:9999;width:0;
-  background:linear-gradient(90deg,var(--ac),var(--ad));
-  box-shadow:0 0 14px rgba(var(--ar),.9);
-  transition:width .1s;
-}
+══════════════════════════════════════════ */
+#bar{position:fixed;top:0;left:0;height:2px;z-index:9999;width:0;background:linear-gradient(90deg,var(--ac),var(--ad));box-shadow:0 0 16px rgba(var(--ar),.9);transition:width .1s;}
 
-/* ═══════════════════════════════════════
-   CUSTOM CURSOR
-═══════════════════════════════════════ */
-#cd{
-  position:fixed;width:7px;height:7px;background:var(--ac);
-  border-radius:50%;pointer-events:none;z-index:10001;
-  transform:translate(-50%,-50%);
-  transition:background .3s,transform .12s;
-  mix-blend-mode:screen;
-}
-#cc{
-  position:fixed;width:36px;height:36px;
-  border:1.5px solid rgba(var(--ar),.5);
-  border-radius:50%;pointer-events:none;z-index:10000;
-  transform:translate(-50%,-50%);
-  transition:width .3s var(--ease),height .3s var(--ease),border-color .3s;
-}
+/* ══════════════════════════════════════════
+   CURSOR
+══════════════════════════════════════════ */
+#cd{position:fixed;width:7px;height:7px;background:var(--ac);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);transition:background .3s,transform .12s;mix-blend-mode:screen;}
+#cc{position:fixed;width:36px;height:36px;border:1.5px solid rgba(var(--ar),.5);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease),border-color .3s;}
 [data-theme="light"] #cd{mix-blend-mode:multiply;}
 
-/* ═══════════════════════════════════════
-   GRAIN TEXTURE
-═══════════════════════════════════════ */
-#grain{
-  position:fixed;inset:0;z-index:9997;pointer-events:none;opacity:.3;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-}
+/* ══════════════════════════════════════════
+   GRAIN
+══════════════════════════════════════════ */
+#grain{position:fixed;inset:0;z-index:9997;pointer-events:none;opacity:.3;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");}
 
-/* ═══════════════════════════════════════
-   SETTINGS BUTTON
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   HIRE ME FIXED
+══════════════════════════════════════════ */
+#hire-fixed{
+  position:fixed;bottom:28px;left:28px;z-index:1000;
+  display:flex;align-items:center;gap:9px;
+  padding:12px 22px;background:var(--ac);color:#000;
+  font-family:var(--fh);font-size:13px;font-weight:700;letter-spacing:.5px;
+  border-radius:var(--r2);
+  box-shadow:0 8px 32px rgba(var(--ar),.4);
+  transition:all .35s var(--ease);
+  animation:hireGlow 3s ease-in-out infinite;
+  border:none;cursor:pointer;
+}
+@keyframes hireGlow{0%,100%{box-shadow:0 8px 32px rgba(var(--ar),.4);}50%{box-shadow:0 8px 50px rgba(var(--ar),.75),0 0 0 4px rgba(var(--ar),.12);}}
+#hire-fixed:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(var(--ar),.65);}
+#hire-fixed svg{width:14px;height:14px;}
+
+/* ══════════════════════════════════════════
+   SETTINGS BTN
+══════════════════════════════════════════ */
 #sbtn{
   position:fixed;bottom:28px;right:28px;z-index:1000;
   width:52px;height:52px;background:var(--bg2);
@@ -106,9 +104,9 @@ img{display:block;max-width:100%;}
 #sbtn.open{color:var(--ac);border-color:rgba(var(--ar),.5);transform:rotate(120deg);}
 #sbtn svg{width:20px;height:20px;}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    SETTINGS PANEL
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 #spanel{
   position:fixed;bottom:92px;right:28px;z-index:999;
   width:300px;background:var(--bg1);
@@ -120,594 +118,405 @@ img{display:block;max-width:100%;}
   box-shadow:0 32px 80px rgba(0,0,0,.55);
 }
 #spanel.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all;}
-
-.sp-hd{
-  font-family:var(--fm);font-size:9px;letter-spacing:3px;
-  text-transform:uppercase;color:var(--tx2);
-  padding-bottom:14px;margin-bottom:20px;
-  border-bottom:1px solid var(--bd);
-  display:flex;align-items:center;gap:8px;
-}
+.sp-hd{font-family:var(--fm);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--tx2);padding-bottom:14px;margin-bottom:20px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:8px;}
 .sp-hd::before{content:'';width:6px;height:6px;background:var(--ac);border-radius:50%;flex-shrink:0;transition:background .3s;}
-
 .sp-sec{margin-bottom:22px;}
 .sp-lb{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tx3);margin-bottom:9px;display:block;font-family:var(--fm);}
-
 .sp-row{display:flex;gap:6px;}
-.sp-btn{
-  flex:1;padding:9px 4px;text-align:center;
-  background:var(--glass);border:1px solid var(--bd);
-  color:var(--tx2);font-family:var(--fm);font-size:11px;
-  cursor:pointer;border-radius:var(--r);transition:all .22s;
-}
+.sp-btn{flex:1;padding:9px 4px;text-align:center;background:var(--glass);border:1px solid var(--bd);color:var(--tx2);font-family:var(--fm);font-size:11px;cursor:pointer;border-radius:var(--r);transition:all .22s;}
 .sp-btn.on{background:var(--ac);border-color:var(--ac);color:#000;font-weight:700;}
-
 .swatches{display:flex;gap:8px;align-items:center;}
-.swatch{
-  width:28px;height:28px;border-radius:50%;
-  border:2px solid transparent;cursor:pointer;
-  transition:transform .2s,box-shadow .2s;
-  position:relative;
-}
+.swatch{width:28px;height:28px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;}
 .swatch:hover{transform:scale(1.2);}
 .swatch.on{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--ac);}
-.swatch.on::after{
-  content:'✓';position:absolute;inset:0;display:flex;
-  align-items:center;justify-content:center;
-  font-size:13px;color:#000;font-weight:900;
-}
-
+.swatch.on::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;color:#000;font-weight:900;}
 .tog-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
 .tog-row:last-child{margin-bottom:0;}
 .tog-lb{font-size:12px;color:var(--tx2);}
-.tog{
-  width:44px;height:24px;background:var(--bg3);
-  border:1px solid var(--bd2);border-radius:12px;
-  position:relative;cursor:pointer;transition:background .3s;
-}
+.tog{width:44px;height:24px;background:var(--bg3);border:1px solid var(--bd2);border-radius:12px;position:relative;cursor:pointer;transition:background .3s;}
 .tog.on{background:var(--ac);border-color:var(--ac);}
-.tog::after{
-  content:'';position:absolute;width:18px;height:18px;
-  background:#fff;border-radius:50%;top:2px;left:2px;
-  transition:left .3s var(--ease);
-  box-shadow:0 1px 4px rgba(0,0,0,.3);
-}
+.tog::after{content:'';position:absolute;width:18px;height:18px;background:#fff;border-radius:50%;top:2px;left:2px;transition:left .3s var(--ease);box-shadow:0 1px 4px rgba(0,0,0,.3);}
 .tog.on::after{left:22px;}
 
-/* ═══════════════════════════════════════
-   HIRE ME BUTTON (fixed)
-═══════════════════════════════════════ */
-#hire-me-fixed{
-  position:fixed;bottom:28px;left:28px;z-index:1000;
-  display:flex;align-items:center;gap:9px;
-  padding:13px 22px;
-  background:var(--ac);color:#000;
-  font-family:var(--fh);font-size:13px;font-weight:700;
-  letter-spacing:.5px;border-radius:var(--r2);
-  box-shadow:0 8px 32px rgba(var(--ar),.4);
-  transition:all .35s var(--ease);
-  animation:hireGlow 3s ease-in-out infinite;
-}
-@keyframes hireGlow{
-  0%,100%{box-shadow:0 8px 32px rgba(var(--ar),.4);}
-  50%{box-shadow:0 8px 48px rgba(var(--ar),.7),0 0 0 4px rgba(var(--ar),.15);}
-}
-#hire-me-fixed:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(var(--ar),.6);}
-#hire-me-fixed svg{width:15px;height:15px;flex-shrink:0;}
-
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    NAV
-═══════════════════════════════════════ */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:500;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 60px;height:68px;
-  border-bottom:1px solid transparent;
-  transition:all .4s var(--ease);
-}
-nav.stuck{
-  background:rgba(7,7,10,.92);border-bottom-color:var(--bd);
-  backdrop-filter:blur(24px) saturate(180%);
-}
-[data-theme="light"] nav.stuck{background:rgba(245,245,240,.95);}
+══════════════════════════════════════════ */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:68px;border-bottom:1px solid transparent;transition:all .4s var(--ease);}
+nav.stuck{background:rgba(7,7,11,.93);border-bottom-color:var(--bd);backdrop-filter:blur(24px) saturate(180%);}
+[data-theme="light"] nav.stuck{background:rgba(243,243,238,.96);}
 .nav-logo{font-family:var(--fh);font-size:20px;font-weight:800;letter-spacing:-.5px;}
 .nav-logo .dot{color:var(--ac);}
 .nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{
-  font-size:11px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--tx2);position:relative;transition:color .3s;
-}
-.nav-links a::after{
-  content:'';position:absolute;bottom:-4px;left:0;
-  width:0;height:1px;background:var(--ac);transition:width .3s;
-}
+.nav-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--tx2);position:relative;transition:color .3s;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--ac);transition:width .3s;}
 .nav-links a:hover,.nav-links a.cur{color:var(--ac);}
 .nav-links a:hover::after,.nav-links a.cur::after{width:100%;}
 .nav-right{display:flex;align-items:center;gap:10px;}
-.ntheme{
-  display:flex;background:var(--bg2);border:1px solid var(--bd);
-  border-radius:30px;padding:3px;gap:2px;
-}
-.nth{
-  width:28px;height:28px;border-radius:50%;border:none;
-  background:transparent;cursor:pointer;font-size:14px;
-  display:flex;align-items:center;justify-content:center;transition:all .25s;
-}
+.ntheme{display:flex;background:var(--bg2);border:1px solid var(--bd);border-radius:30px;padding:3px;gap:2px;}
+.nth{width:28px;height:28px;border-radius:50%;border:none;background:transparent;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .25s;}
 .nth.on{background:var(--ac);}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    HERO
-═══════════════════════════════════════ */
-#hero{
-  min-height:100vh;
-  display:grid;grid-template-columns:1fr 1fr;
-  position:relative;overflow:hidden;
-}
+══════════════════════════════════════════ */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
 
-/* animated grid */
-.h-grid{
-  position:absolute;inset:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(var(--ar),.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(var(--ar),.04) 1px,transparent 1px);
-  background-size:65px 65px;
-  animation:gridDrift 24s linear infinite;
-  mask-image:radial-gradient(ellipse 100% 100% at 30% 50%,black,transparent);
-}
+.h-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(var(--ar),.04) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--ar),.04) 1px,transparent 1px);background-size:65px 65px;animation:gridDrift 24s linear infinite;mask-image:radial-gradient(ellipse 100% 100% at 30% 50%,black,transparent);}
 @keyframes gridDrift{to{background-position:65px 65px;}}
+.h-orb1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(var(--ar),.08) 0%,transparent 65%);top:-200px;left:-200px;pointer-events:none;animation:orbP 8s ease-in-out infinite;}
+.h-orb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,61,138,.05) 0%,transparent 65%);bottom:0;right:40%;pointer-events:none;animation:orbP 12s ease-in-out infinite reverse;}
+@keyframes orbP{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.08);opacity:1}}
 
-/* orb glows */
-.h-orb1{
-  position:absolute;width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(var(--ar),.08) 0%,transparent 65%);
-  top:-200px;left:-200px;pointer-events:none;
-  animation:orbPulse 8s ease-in-out infinite;
-}
-.h-orb2{
-  position:absolute;width:400px;height:400px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,61,138,.05) 0%,transparent 65%);
-  bottom:0;right:40%;pointer-events:none;
-  animation:orbPulse 12s ease-in-out infinite reverse;
-}
-@keyframes orbPulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.08);opacity:1}}
-
-/* hero left */
-.h-left{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:140px 60px 80px;position:relative;z-index:2;
-}
-
-.h-badge{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--fm);font-size:11px;letter-spacing:2px;
-  color:var(--ac);margin-bottom:30px;
-  opacity:0;animation:fadeUp .8s var(--ease) .3s forwards;
-}
-.badge-line{width:28px;height:1px;background:var(--ac);}
-.badge-dot{width:6px;height:6px;background:var(--ac);border-radius:50%;animation:blink 2s infinite;}
+.h-left{display:flex;flex-direction:column;justify-content:center;padding:140px 60px 80px;position:relative;z-index:2;}
+.h-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--ac);margin-bottom:28px;opacity:0;animation:fadeUp .8s var(--ease) .3s forwards;}
+.b-line{width:28px;height:1px;background:var(--ac);}
+.b-dot{width:6px;height:6px;background:var(--ac);border-radius:50%;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 
-.h-name{
-  font-family:var(--fh);
-  font-size:clamp(48px,7vw,104px);
-  font-weight:800;line-height:.88;letter-spacing:-3px;margin-bottom:24px;
-}
+.h-name{font-family:var(--fh);font-size:clamp(46px,7vw,104px);font-weight:800;line-height:.88;letter-spacing:-3px;margin-bottom:22px;}
 .h-name .row{display:block;overflow:hidden;}
-.h-name .w{
-  display:inline-block;opacity:0;transform:translateY(105%);
-  animation:wordUp .9s var(--ease) forwards;
-}
-.w1{animation-delay:.5s;}
-.w2{animation-delay:.66s;color:transparent;-webkit-text-stroke:1.5px var(--tx3);}
-.w3{animation-delay:.82s;color:var(--ac);}
+.h-name .w{display:inline-block;opacity:0;transform:translateY(105%);animation:wordUp .9s var(--ease) forwards;}
+.w1{animation-delay:.5s;}.w2{animation-delay:.66s;color:transparent;-webkit-text-stroke:1.5px var(--tx3);}.w3{animation-delay:.82s;color:var(--ac);}
 @keyframes wordUp{to{opacity:1;transform:translateY(0);}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-.h-role{
-  display:inline-block;
-  font-family:var(--fm);font-size:12px;letter-spacing:1.5px;
-  color:var(--tx2);margin-bottom:20px;
-  background:var(--glass);border:1px solid var(--bd);
-  padding:8px 16px;border-radius:var(--r);
-  opacity:0;animation:fadeUp .8s var(--ease) .9s forwards;
-}
+.h-role{display:inline-block;font-family:var(--fm);font-size:11px;letter-spacing:1.5px;color:var(--tx2);margin-bottom:18px;background:var(--glass);border:1px solid var(--bd);padding:7px 14px;border-radius:var(--r);opacity:0;animation:fadeUp .8s var(--ease) .9s forwards;}
 .h-role em{color:var(--ac);font-style:normal;}
-
-.h-desc{
-  font-size:15px;line-height:1.85;color:var(--tx2);
-  max-width:430px;margin-bottom:40px;
-  opacity:0;animation:fadeUp .8s var(--ease) 1.05s forwards;
-}
+.h-desc{font-size:14px;line-height:1.85;color:var(--tx2);max-width:420px;margin-bottom:38px;opacity:0;animation:fadeUp .8s var(--ease) 1.05s forwards;}
 .h-desc strong{color:var(--tx);}
+.h-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s var(--ease) 1.2s forwards;}
 
-.h-btns{
-  display:flex;gap:12px;flex-wrap:wrap;
-  opacity:0;animation:fadeUp .8s var(--ease) 1.2s forwards;
-}
-
-.btn-fill{
-  position:relative;overflow:hidden;
-  display:inline-flex;align-items:center;gap:8px;
-  padding:14px 28px;background:var(--ac);color:#000;
-  font-weight:700;font-size:13px;
-  border-radius:var(--r);transition:transform .3s var(--ease),box-shadow .3s;
-  font-family:var(--fb);
-}
-.btn-fill::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,.25),transparent);
-  opacity:0;transition:opacity .3s;
-}
+.btn-fill{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--ac);color:#000;font-weight:700;font-size:13px;border-radius:var(--r);transition:transform .3s var(--ease),box-shadow .3s;font-family:var(--fb);}
+.btn-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.25),transparent);opacity:0;transition:opacity .3s;}
 .btn-fill:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(var(--ar),.42);}
 .btn-fill:hover::after{opacity:1;}
-
-.btn-ghost{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:14px 24px;border:1px solid var(--bd2);color:var(--tx2);
-  font-size:13px;border-radius:var(--r);
-  transition:all .3s var(--ease);font-family:var(--fb);
-}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border:1px solid var(--bd2);color:var(--tx2);font-size:13px;border-radius:var(--r);transition:all .3s var(--ease);font-family:var(--fb);}
 .btn-ghost:hover{border-color:var(--ac);color:var(--ac);transform:translateY(-3px);}
 
-.h-stats{
-  display:flex;gap:0;margin-top:48px;padding-top:28px;
-  border-top:1px solid var(--bd);
-  opacity:0;animation:fadeUp .8s var(--ease) 1.4s forwards;
-}
-.h-stat{
-  flex:1;padding-right:24px;margin-right:24px;
-  border-right:1px solid var(--bd);
-}
+.h-stats{display:flex;gap:0;margin-top:44px;padding-top:26px;border-top:1px solid var(--bd);opacity:0;animation:fadeUp .8s var(--ease) 1.4s forwards;}
+.h-stat{flex:1;padding-right:22px;margin-right:22px;border-right:1px solid var(--bd);}
 .h-stat:last-child{border-right:none;margin-right:0;padding-right:0;}
-.h-stat-n{
-  font-family:var(--fh);font-size:36px;font-weight:800;
-  color:var(--tx);line-height:1;
-}
+.h-stat-n{font-family:var(--fh);font-size:34px;font-weight:800;color:var(--tx);line-height:1;}
 .h-stat-n sup{font-size:.45em;color:var(--ac);vertical-align:super;}
 .h-stat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tx2);margin-top:4px;font-family:var(--fm);}
 
-/* ═══ PHOTO RIGHT PANEL ═══ */
-.h-right{
-  position:relative;overflow:hidden;
-  background:var(--bg);
-  opacity:0;animation:fadeIn 1.2s var(--ease) .5s forwards;
-}
+/* ══ PHOTO PANEL ══ */
+.h-right{position:relative;overflow:hidden;background:var(--bg);opacity:0;animation:fadeIn 1.2s var(--ease) .5s forwards;transition:background .5s var(--ease);}
 
-/* IMAGE — fills full panel */
-.h-photo-wrap{
-  position:absolute;
-  top:0;left:0;right:0;bottom:0;
-}
+.h-photo-wrap{position:absolute;top:0;left:0;width:100%;height:100%;}
 .h-photo-wrap img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:top center;
-  /* grayscale + theme color tint via mix-blend-mode */
-  filter:grayscale(1) contrast(1.1) brightness(.9);
-  transition:filter .7s var(--ease), transform 10s var(--ease);
+  width:100%;height:100%;
+  object-fit:cover;object-position:top center;
   display:block;
+  filter:grayscale(1) contrast(1.1) brightness(.85);
   mix-blend-mode:luminosity;
+  transition:filter .7s var(--ease),transform 10s var(--ease);
 }
-.h-right:hover .h-photo-wrap img{
-  filter:grayscale(.6) contrast(1.15) brightness(.95);
-  transform:scale(1.04);
-}
+.h-right:hover .h-photo-wrap img{filter:grayscale(.5) contrast(1.1) brightness(.9);transform:scale(1.03);}
 
-/* color tint overlay — changes with theme & accent */
-.h-photo-tint{
+/* THEME COLOR TINT — changes with theme */
+.h-tint{
   position:absolute;inset:0;z-index:1;pointer-events:none;
   background:var(--bg);
   mix-blend-mode:color;
-  opacity:.75;
-  transition:background .5s var(--ease), opacity .5s;
+  opacity:.72;
+  transition:background .5s var(--ease),opacity .5s;
 }
-/* accent color wash — subtle tint layer */
-.h-photo-accent{
+[data-theme="light"] .h-tint{background:var(--bg1);opacity:.65;}
+
+/* ACCENT COLOR WASH */
+.h-accent{
   position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:rgba(var(--ar),.22);
+  background:rgba(var(--ar),.2);
   mix-blend-mode:soft-light;
-  opacity:1;
-  transition:background .5s var(--ease), opacity .5s;
-}
-[data-theme="light"] .h-photo-accent{
-  background:rgba(var(--ar),.3);
-  mix-blend-mode:multiply;
-}
-/* dark theme: darker bg tint */
-[data-theme="dark"] .h-photo-tint{
-  background:var(--bg);
-  opacity:.68;
-}
-/* light theme: lighter warm tint */
-[data-theme="light"] .h-photo-tint{
-  background:var(--bg1);
-  opacity:.6;
-}
-/* light mode image adjustment */
-[data-theme="light"] .h-photo-wrap img{
-  filter:grayscale(.8) contrast(1.05) brightness(1.05);
-}
-
-/* gradient overlays */
-.h-photo-left-fade{
-  position:absolute;inset:0;z-index:3;pointer-events:none;
-  background:linear-gradient(to right, var(--bg) 0%, rgba(7,7,10,.5) 22%, transparent 48%);
   transition:background .5s var(--ease);
 }
-[data-theme="light"] .h-photo-left-fade{
-  background:linear-gradient(to right, var(--bg) 0%, rgba(245,245,240,.55) 22%, transparent 48%);
-}
-.h-photo-bottom-fade{
-  position:absolute;bottom:0;left:0;right:0;height:45%;z-index:3;pointer-events:none;
-  background:linear-gradient(to top, var(--bg) 0%, transparent 100%);
-  transition:background .5s var(--ease);
-}
+[data-theme="light"] .h-accent{background:rgba(var(--ar),.28);mix-blend-mode:multiply;}
+[data-theme="light"] .h-photo-wrap img{filter:grayscale(.75) contrast(1.05) brightness(1.05);}
 
-/* accent edge */
-.h-photo-edge{
-  position:absolute;left:0;top:15%;bottom:15%;width:2px;z-index:3;
-  background:linear-gradient(to bottom,transparent,var(--ac),transparent);
-}
+.h-fade-l{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(to right,var(--bg) 0%,rgba(7,7,11,.45) 22%,transparent 48%);transition:background .5s var(--ease);}
+[data-theme="light"] .h-fade-l{background:linear-gradient(to right,var(--bg) 0%,rgba(243,243,238,.5) 22%,transparent 48%);}
+.h-fade-b{position:absolute;bottom:0;left:0;right:0;height:45%;z-index:3;pointer-events:none;background:linear-gradient(to top,var(--bg),transparent);transition:background .5s var(--ease);}
+.h-edge{position:absolute;left:0;top:15%;bottom:15%;width:2px;z-index:4;background:linear-gradient(to bottom,transparent,var(--ac),transparent);}
 
-/* floating chips */
-.h-chip{
-  position:absolute;z-index:4;
-  background:rgba(7,7,10,.85);backdrop-filter:blur(16px) saturate(150%);
-  border:1px solid rgba(var(--ar),.25);border-radius:var(--r2);
-  padding:12px 16px;
-  animation:chipFloat 4s ease-in-out infinite;
-  transition:border-color .3s;
-}
+.h-chip{position:absolute;z-index:5;background:rgba(7,7,11,.88);backdrop-filter:blur(16px);border:1px solid rgba(var(--ar),.22);border-radius:var(--r2);padding:11px 15px;animation:chipFloat 4s ease-in-out infinite;transition:border-color .3s,background .5s;}
+[data-theme="light"] .h-chip{background:rgba(243,243,238,.94);}
 .h-chip:hover{border-color:rgba(var(--ar),.6);}
-[data-theme="light"] .h-chip{background:rgba(245,245,240,.92);}
-.h-chip.c1{top:20%;right:22px;animation-delay:0s;}
-.h-chip.c2{top:47%;right:22px;animation-delay:.7s;animation-duration:5s;}
-.h-chip.c3{bottom:18%;right:22px;animation-delay:1.3s;animation-duration:4.6s;}
+.h-chip.c1{top:20%;right:20px;animation-delay:0s;}
+.h-chip.c2{top:47%;right:20px;animation-delay:.7s;animation-duration:5s;}
+.h-chip.c3{bottom:18%;right:20px;animation-delay:1.3s;animation-duration:4.5s;}
 @keyframes chipFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.chip-v{font-family:var(--fh);font-size:22px;font-weight:700;color:var(--ac);line-height:1.1;}
-.chip-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--tx2);margin-top:3px;font-family:var(--fm);}
+.chip-v{font-family:var(--fh);font-size:20px;font-weight:700;color:var(--ac);line-height:1.1;}
+.chip-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--tx2);margin-top:2px;font-family:var(--fm);}
 
-/* scroll indicator */
-.h-scroll{
-  position:absolute;bottom:32px;left:60px;z-index:3;
-  display:flex;align-items:center;gap:12px;
-  font-family:var(--fm);font-size:9px;letter-spacing:2px;
-  text-transform:uppercase;color:var(--tx3);
-  opacity:0;animation:fadeUp .8s var(--ease) 2.3s forwards;
-}
-.scroll-needle{
-  width:1px;height:52px;
-  background:linear-gradient(to bottom,var(--ac),transparent);
-  animation:needle 2s ease-in-out infinite;
-}
-@keyframes needle{0%,100%{height:36px;opacity:.4}50%{height:60px;opacity:1}}
+.h-scroll{position:absolute;bottom:30px;left:60px;z-index:4;display:flex;align-items:center;gap:10px;font-family:var(--fm);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);opacity:0;animation:fadeUp .8s var(--ease) 2.3s forwards;}
+.scroll-n{width:1px;height:50px;background:linear-gradient(to bottom,var(--ac),transparent);animation:needle 2s ease-in-out infinite;}
+@keyframes needle{0%,100%{height:36px;opacity:.4}50%{height:58px;opacity:1}}
 
-/* ═══════════════════════════════════════
-   SECTION BASE
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   SECTIONS
+══════════════════════════════════════════ */
 .sec{padding:110px 60px;}
 .sec.alt{background:var(--bg1);}
-.sec-ey{display:flex;align-items:center;gap:16px;margin-bottom:64px;}
+.sec-ey{display:flex;align-items:center;gap:16px;margin-bottom:60px;}
 .sec-num{font-family:var(--fm);font-size:10px;letter-spacing:3px;color:var(--ac);flex-shrink:0;}
-.sec-t{font-family:var(--fh);font-size:clamp(34px,4.5vw,62px);font-weight:800;letter-spacing:-2px;line-height:1;}
+.sec-t{font-family:var(--fh);font-size:clamp(32px,4.5vw,60px);font-weight:800;letter-spacing:-2px;line-height:1;}
 .sec-line{flex:1;height:1px;background:var(--bd);margin-left:14px;}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    ABOUT
-═══════════════════════════════════════ */
-.ab-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:70px;align-items:start;}
-.ab-text p{font-size:15px;line-height:1.9;color:var(--tx2);margin-bottom:16px;}
+══════════════════════════════════════════ */
+.ab-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:68px;align-items:start;}
+.ab-text p{font-size:15px;line-height:1.9;color:var(--tx2);margin-bottom:15px;}
 .ab-text strong{color:var(--tx);}
-.ab-quote{
-  margin-top:24px;padding:18px 22px;
-  border-left:2px solid var(--ac);
-  background:var(--glass);border-radius:0 var(--r) var(--r) 0;
-}
+.ab-quote{margin-top:22px;padding:16px 20px;border-left:2px solid var(--ac);background:var(--glass);border-radius:0 var(--r) var(--r) 0;}
 .ab-quote p{font-family:var(--fm);font-size:12px;line-height:1.75;color:var(--tx2);margin:0;font-style:italic;}
-
-/* mac code card */
 .code-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r2);overflow:hidden;}
-.code-head{
-  padding:13px 18px;background:var(--bg3);border-bottom:1px solid var(--bd);
-  display:flex;align-items:center;gap:7px;
-}
+.code-head{padding:12px 16px;background:var(--bg3);border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:7px;}
 .cdot{width:10px;height:10px;border-radius:50%;}
 .cdot.r{background:#ff5f57;}.cdot.y{background:#febc2e;}.cdot.g{background:#28c840;}
 .code-head span{font-family:var(--fm);font-size:11px;color:var(--tx2);margin-left:auto;}
-.code-body{padding:20px;}
-.irow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bd);font-size:13px;}
+.code-body{padding:16px;}
+.irow{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--bd);font-size:13px;}
 .irow:last-child{border-bottom:none;}
-.ik{font-family:var(--fm);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);}
+.ik{font-family:var(--fm);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx3);}
 .iv{color:var(--tx);}
 .iv a{color:var(--ac);}
-.iv a:hover{text-decoration:underline;}
 .alive::before{content:'';display:inline-block;width:7px;height:7px;background:var(--ac);border-radius:50%;margin-right:6px;animation:blink 1.8s infinite;}
 
-/* ═══════════════════════════════════════
-   SKILLS — BENTO
-═══════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   SKILLS BENTO
+══════════════════════════════════════════ */
 .sk-bento{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
-.sk-card{
-  background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r2);
-  padding:26px 22px;position:relative;overflow:hidden;
-  transition:all .4s var(--ease);cursor:default;
-}
+.sk-card{background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r2);padding:24px 20px;position:relative;overflow:hidden;transition:all .4s var(--ease);cursor:default;}
 [data-theme="light"] .sk-card{background:var(--bg2);}
-.sk-card::before{
-  content:'';position:absolute;inset:0;opacity:0;transition:opacity .4s;
-  background:radial-gradient(circle at 25% 25%,rgba(var(--ar),.08),transparent 60%);
-}
-.sk-card::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);
-}
+.sk-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .4s;background:radial-gradient(circle at 25% 25%,rgba(var(--ar),.08),transparent 60%);}
+.sk-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
 .sk-card:hover{transform:translateY(-5px);border-color:rgba(var(--ar),.35);box-shadow:0 18px 44px rgba(0,0,0,.22);}
 .sk-card:hover::before{opacity:1;}
 .sk-card:hover::after{transform:scaleX(1);}
 .sk-card.s2{grid-column:span 2;}
 .sk-card.s3{grid-column:span 3;}
-.sk-card.feat{grid-column:span 3;grid-row:span 2;display:flex;flex-direction:column;justify-content:flex-end;padding:32px 28px;}
-.sk-big{position:absolute;top:8px;right:10px;font-family:var(--fh);font-size:86px;line-height:1;color:rgba(var(--ar),.08);transition:color .4s;pointer-events:none;}
+.sk-card.feat{grid-column:span 3;grid-row:span 2;display:flex;flex-direction:column;justify-content:flex-end;padding:30px 26px;}
+.sk-big{position:absolute;top:6px;right:8px;font-family:var(--fh);font-size:82px;line-height:1;color:rgba(var(--ar),.08);transition:color .4s;pointer-events:none;}
 .sk-card:hover .sk-big{color:rgba(var(--ar),.22);}
-.sk-ico{width:30px;height:30px;color:var(--ac);margin-bottom:14px;}
-.sk-ti{font-family:var(--fh);font-size:17px;font-weight:700;letter-spacing:-.2px;margin-bottom:12px;transition:color .3s;}
+.sk-ico{width:28px;height:28px;color:var(--ac);margin-bottom:12px;}
+.sk-ti{font-family:var(--fh);font-size:16px;font-weight:700;letter-spacing:-.2px;margin-bottom:10px;transition:color .3s;}
 .sk-card:hover .sk-ti{color:var(--ac);}
 .sk-chips{display:flex;flex-wrap:wrap;gap:5px;}
-.sk-chip{
-  font-family:var(--fm);font-size:9px;letter-spacing:1px;
-  padding:3px 9px;text-transform:uppercase;
-  background:var(--glass);border:1px solid var(--bd);color:var(--tx2);
-  border-radius:30px;transition:all .2s;
-}
+.sk-chip{font-family:var(--fm);font-size:9px;letter-spacing:1px;padding:2px 8px;text-transform:uppercase;background:var(--glass);border:1px solid var(--bd);color:var(--tx2);border-radius:30px;transition:all .2s;}
 .sk-card:hover .sk-chip{border-color:rgba(var(--ar),.35);color:var(--ac);}
 
-/* ═══════════════════════════════════════
-   PROJECTS
-═══════════════════════════════════════ */
-#projects{overflow:hidden;}
-.proj-hint{
-  font-family:var(--fm);font-size:10px;letter-spacing:2px;
-  color:var(--tx3);margin-bottom:22px;
-  display:flex;align-items:center;gap:10px;
+/* ══════════════════════════════════════════
+   PROJECTS — TABS + MODAL
+══════════════════════════════════════════ */
+.proj-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
+.proj-tab{
+  padding:9px 20px;background:var(--glass);border:1px solid var(--bd);
+  color:var(--tx2);font-family:var(--fm);font-size:11px;letter-spacing:1px;
+  cursor:pointer;border-radius:var(--r);transition:all .25s;
 }
-.proj-hint::before,.proj-hint::after{content:'';flex:0 0 20px;height:1px;background:var(--bd);}
-.proj-scroll{overflow-x:auto;overflow-y:visible;scrollbar-width:none;cursor:grab;padding-bottom:24px;}
-.proj-scroll::-webkit-scrollbar{display:none;}
-.proj-scroll:active{cursor:grabbing;}
-.proj-row{display:flex;gap:14px;padding:8px 60px;width:max-content;}
-.proj-card{
-  width:360px;flex-shrink:0;background:var(--bg1);border:1px solid var(--bd);
-  border-radius:var(--r2);overflow:hidden;transition:all .4s var(--ease);position:relative;
-}
-.proj-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,var(--ac),transparent);
-  transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);
-}
-.proj-card:hover{transform:translateY(-9px);border-color:rgba(var(--ar),.3);box-shadow:0 28px 56px rgba(0,0,0,.28);}
-.proj-card:hover::before{transform:scaleX(1);}
-.proj-head{padding:24px 24px 16px;display:flex;justify-content:space-between;align-items:flex-start;}
-.proj-n{font-family:var(--fh);font-size:48px;line-height:1;color:rgba(var(--ar),.1);transition:color .3s;}
-.proj-card:hover .proj-n{color:rgba(var(--ar),.25);}
-.proj-arr{
-  width:36px;height:36px;border:1px solid var(--bd);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--tx2);transition:all .3s;
-}
-.proj-arr svg{width:14px;height:14px;transition:transform .3s;}
-.proj-card:hover .proj-arr{border-color:var(--ac);color:var(--ac);}
-.proj-card:hover .proj-arr svg{transform:rotate(45deg);}
-.proj-body{padding:0 24px 22px;}
-.proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:11px;}
-.proj-tag{font-family:var(--fm);font-size:9px;letter-spacing:1px;padding:2px 7px;background:rgba(var(--ar),.1);color:var(--ac);border-radius:4px;}
-.proj-ti{font-family:var(--fh);font-size:20px;letter-spacing:-.2px;margin-bottom:8px;transition:color .3s;}
-.proj-card:hover .proj-ti{color:var(--ac);}
-.proj-desc{font-size:13px;line-height:1.8;color:var(--tx2);}
-.proj-foot{padding:14px 24px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;}
-.proj-yr{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--tx3);}
+.proj-tab.on{background:var(--ac);border-color:var(--ac);color:#000;font-weight:700;}
+.proj-tab:hover:not(.on){border-color:rgba(var(--ar),.4);color:var(--ac);}
 
-/* ═══════════════════════════════════════
-   EXPERIENCE
-═══════════════════════════════════════ */
-.exp-wrap{display:grid;grid-template-columns:260px 1fr;gap:56px;}
-.exp-aside{position:sticky;top:120px;height:fit-content;}
-.exp-co{font-family:var(--fh);font-size:42px;font-weight:800;letter-spacing:-1px;color:var(--ac);margin-bottom:4px;line-height:1;}
-.exp-title-role{font-size:13px;color:var(--tx2);margin-bottom:16px;font-family:var(--fm);}
-.exp-period{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--tx2);margin-bottom:20px;}
-.exp-live{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(var(--ar),.1);border:1px solid rgba(var(--ar),.3);
-  padding:8px 14px;border-radius:30px;
-  font-size:11px;font-family:var(--fm);letter-spacing:1px;color:var(--ac);
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+
+.proj-card{
+  background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r2);
+  overflow:hidden;transition:all .4s var(--ease);position:relative;cursor:pointer;
 }
+[data-theme="light"] .proj-card{background:var(--bg2);}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ac),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease);}
+.proj-card:hover{transform:translateY(-7px);border-color:rgba(var(--ar),.35);box-shadow:0 24px 50px rgba(0,0,0,.25);}
+.proj-card:hover::before{transform:scaleX(1);}
+
+.proj-card-inner{padding:28px;}
+.proj-n{font-family:var(--fh);font-size:44px;line-height:1;color:rgba(var(--ar),.1);margin-bottom:12px;transition:color .3s;}
+.proj-card:hover .proj-n{color:rgba(var(--ar),.25);}
+.proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
+.proj-tag{font-family:var(--fm);font-size:9px;letter-spacing:1px;padding:2px 7px;background:rgba(var(--ar),.1);color:var(--ac);border-radius:4px;}
+.proj-ti{font-family:var(--fh);font-size:18px;letter-spacing:-.2px;margin-bottom:8px;transition:color .3s;}
+.proj-card:hover .proj-ti{color:var(--ac);}
+.proj-short{font-size:13px;line-height:1.7;color:var(--tx2);}
+.proj-foot{padding:14px 28px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;}
+.proj-yr{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--tx3);}
+.proj-view{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ac);font-family:var(--fm);letter-spacing:1px;}
+.proj-view svg{width:12px;height:12px;transition:transform .3s;}
+.proj-card:hover .proj-view svg{transform:translateX(3px);}
+
+/* ADD PROJECT CARD */
+.proj-add-card{
+  background:var(--glass);border:1px dashed var(--bd2);border-radius:var(--r2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:40px 28px;cursor:pointer;transition:all .4s var(--ease);min-height:200px;
+}
+.proj-add-card:hover{border-color:rgba(var(--ar),.5);background:rgba(var(--ar),.05);transform:translateY(-4px);}
+.proj-add-icon{width:44px;height:44px;border:1.5px solid var(--bd2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--tx2);margin-bottom:14px;transition:all .3s;}
+.proj-add-card:hover .proj-add-icon{border-color:var(--ac);color:var(--ac);background:rgba(var(--ar),.1);}
+.proj-add-txt{font-family:var(--fm);font-size:11px;letter-spacing:1px;color:var(--tx2);}
+.proj-add-card:hover .proj-add-txt{color:var(--ac);}
+
+/* ══ PROJECT MODAL ══ */
+#proj-modal{
+  position:fixed;inset:0;z-index:8000;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;pointer-events:none;
+  transition:opacity .35s var(--ease);
+}
+#proj-modal.open{opacity:1;pointer-events:all;}
+.modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);cursor:pointer;}
+[data-theme="light"] .modal-bg{background:rgba(0,0,0,.5);}
+.modal-box{
+  position:relative;z-index:1;
+  width:100%;max-width:680px;max-height:90vh;overflow-y:auto;
+  background:var(--bg1);border:1px solid var(--bd2);border-radius:var(--r2);
+  transform:translateY(30px) scale(.96);
+  transition:transform .4s var(--ease);
+  box-shadow:0 40px 100px rgba(0,0,0,.6);
+}
+#proj-modal.open .modal-box{transform:translateY(0) scale(1);}
+.modal-head{
+  padding:28px 32px 24px;
+  border-bottom:1px solid var(--bd);
+  display:flex;justify-content:space-between;align-items:flex-start;
+  position:sticky;top:0;background:var(--bg1);z-index:2;
+}
+.modal-close{
+  width:36px;height:36px;border:1px solid var(--bd);border-radius:50%;
+  background:transparent;color:var(--tx2);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .25s;flex-shrink:0;
+}
+.modal-close:hover{border-color:var(--ac);color:var(--ac);transform:rotate(90deg);}
+.modal-close svg{width:16px;height:16px;}
+.modal-num{font-family:var(--fh);font-size:60px;line-height:1;color:rgba(var(--ar),.15);margin-bottom:8px;}
+.modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.modal-tag{font-family:var(--fm);font-size:9px;letter-spacing:1px;padding:3px 9px;background:rgba(var(--ar),.12);color:var(--ac);border-radius:4px;}
+.modal-title{font-family:var(--fh);font-size:28px;font-weight:800;letter-spacing:-.5px;color:var(--tx);}
+.modal-body{padding:28px 32px;}
+.modal-desc{font-size:14px;line-height:1.9;color:var(--tx2);margin-bottom:24px;}
+.modal-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+.modal-meta-item{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:14px 16px;}
+.modal-meta-k{font-family:var(--fm);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);margin-bottom:4px;}
+.modal-meta-v{font-size:13px;color:var(--tx);}
+.modal-features h4{font-family:var(--fh);font-size:16px;letter-spacing:-.2px;margin-bottom:12px;color:var(--tx);}
+.modal-feature-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.modal-feature-list li{font-size:13px;color:var(--tx2);padding-left:18px;position:relative;line-height:1.7;}
+.modal-feature-list li::before{content:'→';position:absolute;left:0;color:var(--ac);font-size:11px;}
+
+/* ══ ADD PROJECT MODAL ══ */
+#add-modal{
+  position:fixed;inset:0;z-index:8000;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .35s var(--ease);
+}
+#add-modal.open{opacity:1;pointer-events:all;}
+.add-modal-box{
+  position:relative;z-index:1;
+  width:100%;max-width:580px;max-height:90vh;overflow-y:auto;
+  background:var(--bg1);border:1px solid var(--bd2);border-radius:var(--r2);
+  transform:translateY(30px) scale(.96);transition:transform .4s var(--ease);
+  box-shadow:0 40px 100px rgba(0,0,0,.6);
+}
+#add-modal.open .add-modal-box{transform:translateY(0) scale(1);}
+.add-modal-head{padding:24px 28px 20px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;}
+.add-modal-head h3{font-family:var(--fh);font-size:22px;letter-spacing:-.5px;}
+.add-form{padding:24px 28px;display:flex;flex-direction:column;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-label{font-family:var(--fm);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);}
+.form-input,.form-textarea,.form-select{
+  width:100%;padding:11px 14px;
+  background:var(--bg2);border:1px solid var(--bd);
+  color:var(--tx);font-family:var(--fb);font-size:13px;
+  border-radius:var(--r);outline:none;
+  transition:border-color .25s;
+  -webkit-appearance:none;
+}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:rgba(var(--ar),.5);}
+.form-textarea{resize:vertical;min-height:80px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-actions{display:flex;gap:10px;justify-content:flex-end;padding-top:8px;}
+.form-cancel{padding:10px 20px;background:var(--glass);border:1px solid var(--bd);color:var(--tx2);font-size:13px;border-radius:var(--r);cursor:pointer;transition:all .25s;}
+.form-cancel:hover{border-color:var(--bd2);color:var(--tx);}
+.form-submit{padding:10px 24px;background:var(--ac);color:#000;font-weight:700;font-size:13px;border-radius:var(--r);cursor:pointer;transition:all .25s;border:none;}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(var(--ar),.4);}
+
+/* ══════════════════════════════════════════
+   EXPERIENCE
+══════════════════════════════════════════ */
+.exp-wrap{display:grid;grid-template-columns:250px 1fr;gap:52px;}
+.exp-aside{position:sticky;top:120px;height:fit-content;}
+.exp-co{font-family:var(--fh);font-size:38px;font-weight:800;letter-spacing:-1px;color:var(--ac);margin-bottom:4px;line-height:1;}
+.exp-role{font-size:12px;color:var(--tx2);margin-bottom:14px;font-family:var(--fm);}
+.exp-period{font-family:var(--fm);font-size:11px;letter-spacing:2px;color:var(--tx2);margin-bottom:18px;}
+.exp-live{display:inline-flex;align-items:center;gap:8px;background:rgba(var(--ar),.1);border:1px solid rgba(var(--ar),.3);padding:7px 13px;border-radius:30px;font-size:11px;font-family:var(--fm);letter-spacing:1px;color:var(--ac);}
 .live-d{width:6px;height:6px;background:var(--ac);border-radius:50%;animation:blink 1.5s infinite;}
 .exp-items{display:flex;flex-direction:column;gap:3px;}
-.exp-it{
-  background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);
-  padding:22px 26px;position:relative;transition:all .4s var(--ease);
-}
+.exp-it{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);padding:20px 24px;position:relative;transition:all .4s var(--ease);}
 [data-theme="light"] .exp-it{background:var(--bg3);}
-.exp-it::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:var(--ac);border-radius:2px;
-  transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease);
-}
+.exp-it::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--ac);border-radius:2px;transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease);}
 .exp-it:hover::before{transform:scaleY(1);}
 .exp-it:hover{border-color:rgba(var(--ar),.25);transform:translateX(5px);}
-.exp-it-hd{display:flex;align-items:center;gap:10px;margin-bottom:7px;}
-.exp-ico{width:17px;height:17px;color:var(--ac);flex-shrink:0;}
+.exp-it-hd{display:flex;align-items:center;gap:9px;margin-bottom:6px;}
+.exp-ico{width:16px;height:16px;color:var(--ac);flex-shrink:0;}
 .exp-it-t{font-weight:600;font-size:14px;}
-.exp-it-d{font-size:13px;color:var(--tx2);line-height:1.75;padding-left:27px;}
+.exp-it-d{font-size:13px;color:var(--tx2);line-height:1.75;padding-left:25px;}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    ACHIEVEMENTS
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 .ach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.ach-card{
-  background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r2);
-  padding:40px 36px;position:relative;overflow:hidden;transition:all .4s var(--ease);
-}
+.ach-card{background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r2);padding:38px 34px;position:relative;overflow:hidden;transition:all .4s var(--ease);}
 .ach-card:hover{border-color:rgba(var(--ar),.3);transform:translateY(-5px);box-shadow:0 22px 48px rgba(0,0,0,.2);}
-.ach-ghost{position:absolute;top:6px;right:12px;font-family:var(--fh);font-size:88px;line-height:1;color:var(--bd);transition:color .4s;pointer-events:none;}
+.ach-ghost{position:absolute;top:6px;right:10px;font-family:var(--fh);font-size:84px;line-height:1;color:var(--bd);transition:color .4s;pointer-events:none;}
 .ach-card:hover .ach-ghost{color:rgba(var(--ar),.1);}
-.ach-ico{width:28px;height:28px;color:var(--ac);margin-bottom:16px;}
-.ach-ti{font-family:var(--fh);font-size:20px;letter-spacing:-.2px;margin-bottom:9px;}
+.ach-ico{width:26px;height:26px;color:var(--ac);margin-bottom:14px;}
+.ach-ti{font-family:var(--fh);font-size:19px;letter-spacing:-.2px;margin-bottom:8px;}
 .ach-desc{font-size:13px;color:var(--tx2);line-height:1.8;}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    EDUCATION
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.edu-card{background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r2);padding:28px;transition:all .4s var(--ease);}
+.edu-card{background:var(--bg1);border:1px solid var(--bd);border-radius:var(--r2);padding:26px;transition:all .4s var(--ease);}
 [data-theme="light"] .edu-card{background:var(--bg2);}
 .edu-card:hover{border-color:rgba(var(--ar),.3);transform:translateY(-4px);}
-.edu-yr{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--ac);margin-bottom:10px;}
-.edu-name{font-family:var(--fh);font-size:18px;letter-spacing:-.2px;margin-bottom:8px;}
+.edu-yr{font-family:var(--fm);font-size:10px;letter-spacing:2px;color:var(--ac);margin-bottom:9px;}
+.edu-name{font-family:var(--fh);font-size:17px;letter-spacing:-.2px;margin-bottom:7px;}
 .edu-desc{font-size:12px;color:var(--tx2);line-height:1.75;}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    CONTACT
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 #contact{padding:150px 60px;text-align:center;position:relative;overflow:hidden;}
-.c-bg-txt{
-  position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);
-  font-family:var(--fh);font-size:18vw;font-weight:800;letter-spacing:-4px;
-  color:rgba(var(--ar),.04);white-space:nowrap;pointer-events:none;z-index:0;line-height:1;
-}
-.c-glow{
-  position:absolute;width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(var(--ar),.08) 0%,transparent 65%);
-  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
-}
+.c-bg-txt{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);font-family:var(--fh);font-size:18vw;font-weight:800;letter-spacing:-4px;color:rgba(var(--ar),.04);white-space:nowrap;pointer-events:none;z-index:0;line-height:1;}
+.c-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(var(--ar),.08) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
 .c-inner{position:relative;z-index:2;}
-.c-pre{font-family:var(--fm);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ac);margin-bottom:16px;}
-.c-h{font-family:var(--fh);font-size:clamp(50px,8vw,100px);font-weight:800;letter-spacing:-3px;line-height:.9;margin-bottom:18px;}
-.c-sub{font-size:15px;color:var(--tx2);line-height:1.85;margin-bottom:44px;}
+.c-pre{font-family:var(--fm);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ac);margin-bottom:14px;}
+.c-h{font-family:var(--fh);font-size:clamp(48px,8vw,100px);font-weight:800;letter-spacing:-3px;line-height:.9;margin-bottom:16px;}
+.c-sub{font-size:15px;color:var(--tx2);line-height:1.85;margin-bottom:42px;}
 .c-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    FOOTER
-═══════════════════════════════════════ */
-footer{
-  padding:28px 60px;border-top:1px solid var(--bd);background:var(--bg1);
-  display:flex;justify-content:space-between;align-items:center;
-}
+══════════════════════════════════════════ */
+footer{padding:26px 60px;border-top:1px solid var(--bd);background:var(--bg1);display:flex;justify-content:space-between;align-items:center;}
 .fl{font-family:var(--fm);font-size:11px;color:var(--tx2);}
 .fl em{color:var(--ac);font-style:normal;}
 .fr{font-family:var(--fm);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);}
 
-/* ═══════════════════════════════════════
-   ANIMATIONS / REVEAL
-═══════════════════════════════════════ */
-.rv{opacity:0;transform:translateY(32px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+/* ══════════════════════════════════════════
+   REVEAL ANIMATIONS
+══════════════════════════════════════════ */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
 .rv.in{opacity:1;transform:none;}
-.rvl{opacity:0;transform:translateX(-32px);transition:all .8s var(--ease);}
+.rvl{opacity:0;transform:translateX(-30px);transition:all .8s var(--ease);}
 .rvl.in{opacity:1;transform:none;}
-.rvr{opacity:0;transform:translateX(32px);transition:all .8s var(--ease);}
+.rvr{opacity:0;transform:translateX(30px);transition:all .8s var(--ease);}
 .rvr.in{opacity:1;transform:none;}
-.stg>*{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+.stg>*{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
 .stg.in>*:nth-child(1){opacity:1;transform:none;transition-delay:.04s;}
 .stg.in>*:nth-child(2){opacity:1;transform:none;transition-delay:.10s;}
 .stg.in>*:nth-child(3){opacity:1;transform:none;transition-delay:.16s;}
@@ -715,33 +524,22 @@ footer{
 .stg.in>*:nth-child(5){opacity:1;transform:none;transition-delay:.28s;}
 .stg.in>*:nth-child(6){opacity:1;transform:none;transition-delay:.34s;}
 .stg.in>*:nth-child(7){opacity:1;transform:none;transition-delay:.40s;}
-
-body.no-motion *,body.no-motion *::before,body.no-motion *::after{animation:none!important;transition:none!important;}
+body.no-motion *{animation:none!important;transition:none!important;}
 body.no-motion .rv,.no-motion .rvl,.no-motion .rvr,.no-motion .stg>*{opacity:1!important;transform:none!important;}
 
-/* ═══════════════════════════════════════
+/* ══════════════════════════════════════════
    RESPONSIVE
-═══════════════════════════════════════ */
+══════════════════════════════════════════ */
 @media(max-width:1024px){
   nav{padding:0 24px;}
   .nav-links{display:none;}
   #hero{grid-template-columns:1fr;grid-template-rows:auto;}
-  .h-left{padding:110px 24px 48px;order:1;}
-  .h-right{
-    order:2;
-    position:relative;
-    width:100%;
-    height:75vw;
-    min-height:300px;
-    max-height:480px;
-    overflow:hidden;
-  }
-  /* CRITICAL: make image fill the box on mobile */
+  .h-left{padding:108px 24px 46px;order:1;}
+  .h-right{order:2;position:relative;width:100%;height:72vw;min-height:280px;max-height:460px;overflow:hidden;}
   .h-photo-wrap{position:absolute;top:0;left:0;width:100%;height:100%;}
   .h-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;}
-  /* on mobile fade from bottom only */
-  .h-photo-left-fade{background:linear-gradient(to bottom,var(--bg) 0%,transparent 25%);}
-  [data-theme="light"] .h-photo-left-fade{background:linear-gradient(to bottom,var(--bg) 0%,transparent 25%);}
+  .h-fade-l{background:linear-gradient(to bottom,var(--bg) 0%,transparent 25%);}
+  [data-theme="light"] .h-fade-l{background:linear-gradient(to bottom,var(--bg) 0%,transparent 25%);}
   .h-chip{display:none;}
   .h-scroll{left:24px;}
   .sec{padding:80px 24px;}
@@ -751,21 +549,23 @@ body.no-motion .rv,.no-motion .rvl,.no-motion .rvr,.no-motion .stg>*{opacity:1!i
   .edu-grid{grid-template-columns:1fr 1fr;}
   .sk-bento{grid-template-columns:repeat(2,1fr);}
   .sk-card.s2,.sk-card.s3,.sk-card.feat{grid-column:span 2;}
-  .proj-row{padding:8px 24px;}
-  #hire-me-fixed{left:16px;bottom:20px;}
-  #sbtn{right:16px;bottom:20px;}
-  #spanel{right:16px;bottom:82px;width:270px;}
+  .proj-grid{grid-template-columns:repeat(2,1fr);}
+  #hire-fixed{left:16px;bottom:18px;}
+  #sbtn{right:16px;bottom:18px;}
+  #spanel{right:16px;bottom:80px;width:270px;}
 }
 @media(max-width:600px){
   .h-left{padding:90px 18px 40px;}
   .h-name{letter-spacing:-2px;}
-  .h-right{height:82vw;max-height:380px;}
+  .h-right{height:80vw;max-height:360px;}
   .sec{padding:60px 18px;}
-  .ach-grid,.edu-grid{grid-template-columns:1fr;}
+  .ach-grid,.edu-grid,.proj-grid{grid-template-columns:1fr;}
   .sk-bento{grid-template-columns:1fr;}
   .sk-card.s2,.sk-card.s3,.sk-card.feat{grid-column:span 1;}
   .h-btns,.c-btns{flex-direction:column;align-items:flex-start;}
   .c-btns{align-items:center;}
+  .modal-meta{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -776,21 +576,17 @@ body.no-motion .rv,.no-motion .rvl,.no-motion .rvr,.no-motion .stg>*{opacity:1!i
 <div id="cd"></div>
 <div id="cc"></div>
 
-<!-- HIRE ME FIXED BUTTON -->
-<a href="mailto:sarfaraza19990@gmail.com" id="hire-me-fixed">
+<!-- HIRE ME FIXED -->
+<a href="mailto:sarfaraza19990@gmail.com" id="hire-fixed">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
   Hire Me
 </a>
 
-<!-- SETTINGS BUTTON -->
+<!-- SETTINGS -->
 <button id="sbtn" aria-label="Settings">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-    <circle cx="12" cy="12" r="3"/>
-    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-  </svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
 </button>
 
-<!-- SETTINGS PANEL -->
 <div id="spanel">
   <div class="sp-hd">Customize Portfolio</div>
   <div class="sp-sec">
@@ -803,11 +599,11 @@ body.no-motion .rv,.no-motion .rvl,.no-motion .rvr,.no-motion .stg>*{opacity:1!i
   <div class="sp-sec">
     <span class="sp-lb">Accent Color</span>
     <div class="swatches">
-      <div class="swatch on" data-a="cyan"   style="background:#00f5c8" title="Cyan"></div>
-      <div class="swatch"    data-a="pink"   style="background:#ff3d8a" title="Pink"></div>
-      <div class="swatch"    data-a="gold"   style="background:#f5c518" title="Gold"></div>
-      <div class="swatch"    data-a="violet" style="background:#9b5de5" title="Violet"></div>
-      <div class="swatch"    data-a="lime"   style="background:#a3e635" title="Lime"></div>
+      <div class="swatch on" data-a="cyan"   style="background:#00f5c8"></div>
+      <div class="swatch"    data-a="pink"   style="background:#ff3d8a"></div>
+      <div class="swatch"    data-a="gold"   style="background:#f5c518"></div>
+      <div class="swatch"    data-a="violet" style="background:#9b5de5"></div>
+      <div class="swatch"    data-a="lime"   style="background:#a3e635"></div>
     </div>
   </div>
   <div class="sp-sec">
@@ -844,101 +640,68 @@ body.no-motion .rv,.no-motion .rvl,.no-motion .rvr,.no-motion .stg>*{opacity:1!i
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- ═══════ HERO ═══════ -->
 <section id="hero">
   <div class="h-grid"></div>
-  <div class="h-orb1"></div>
-  <div class="h-orb2"></div>
-
+  <div class="h-orb1"></div><div class="h-orb2"></div>
   <div class="h-left">
-    <div class="h-badge">
-      <span class="badge-line"></span>
-      <span class="badge-dot"></span>
-      Available for Opportunities
-    </div>
-
+    <div class="h-badge"><span class="b-line"></span><span class="b-dot"></span>Available for Opportunities</div>
     <h1 class="h-name">
       <span class="row"><span class="w w1">SARFARAZ</span></span>
       <span class="row"><span class="w w2">FULL&nbsp;</span><span class="w w3">STACK</span></span>
     </h1>
-
     <div class="h-role">Team Lead @ <em>Cartzlink</em> · Karachi, Pakistan</div>
-
-    <p class="h-desc">
-      <strong>5+ years</strong> building enterprise ERP systems, REST APIs, Flutter mobile apps & Power BI dashboards. Experienced in leading cross-functional dev teams and delivering scalable backend solutions.
-    </p>
-
+    <p class="h-desc"><strong>5+ years</strong> building enterprise ERP systems, REST APIs, Flutter mobile apps & Power BI dashboards. Leading cross-functional teams to deliver scalable, high-performance solutions.</p>
     <div class="h-btns">
-      <a href="#projects" class="btn-fill">
-        View Projects
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="#contact" class="btn-ghost">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Contact Me
-      </a>
+      <a href="#projects" class="btn-fill">View Projects <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#contact" class="btn-ghost"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact Me</a>
     </div>
-
     <div class="h-stats">
-      <div class="h-stat">
-        <div class="h-stat-n">5<sup>+</sup></div>
-        <div class="h-stat-l">Years Exp</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-n">10<sup>+</sup></div>
-        <div class="h-stat-l">Projects</div>
-      </div>
-      <div class="h-stat">
-        <div class="h-stat-n">3</div>
-        <div class="h-stat-l">Platforms</div>
-      </div>
+      <div class="h-stat"><div class="h-stat-n">5<sup>+</sup></div><div class="h-stat-l">Years Exp</div></div>
+      <div class="h-stat"><div class="h-stat-n">10<sup>+</sup></div><div class="h-stat-l">Projects</div></div>
+      <div class="h-stat"><div class="h-stat-n">3</div><div class="h-stat-l">Platforms</div></div>
     </div>
   </div>
-
-  <!-- PHOTO PANEL — image loads from sarfaraz.jpg (same folder) -->
   <div class="h-right">
     <div class="h-photo-wrap">
-      <img src="sarfaraz.jpg" alt="Sarfaraz Ahmad — Full Stack Developer & Team Lead"
-           onerror="this.style.display='none'"/>
+      <img src="sarfaraz.jpg" alt="Sarfaraz Ahmad" onerror="this.parentElement.parentElement.style.background='var(--bg2)'"/>
     </div>
-    <div class="h-photo-left-fade"></div>
-    <div class="h-photo-bottom-fade"></div>
-    <div class="h-photo-edge"></div>
+    <div class="h-tint"></div>
+    <div class="h-accent"></div>
+    <div class="h-fade-l"></div>
+    <div class="h-fade-b"></div>
+    <div class="h-edge"></div>
     <div class="h-chip c1"><div class="chip-v">PHP</div><div class="chip-l">Primary Stack</div></div>
     <div class="h-chip c2"><div class="chip-v">ERP</div><div class="chip-l">Specialist</div></div>
     <div class="h-chip c3"><div class="chip-v">KHI</div><div class="chip-l">Karachi, PK</div></div>
   </div>
-
-  <div class="h-scroll"><div class="scroll-needle"></div>Scroll</div>
+  <div class="h-scroll"><div class="scroll-n"></div>Scroll</div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
+<!-- ═══════ ABOUT ═══════ -->
 <section id="about" class="sec alt">
   <div class="sec-ey rv"><span class="sec-num">// 01</span><h2 class="sec-t">About Me</h2><div class="sec-line"></div></div>
   <div class="ab-wrap">
     <div class="ab-text rvl">
-      <p>I'm <strong>Sarfaraz Ahmad</strong> — a Full Stack Developer and Team Lead at <strong>Cartzlink, Karachi</strong>. Since 2019, I've been architecting and leading enterprise ERP systems that power retail and franchise operations across Pakistan.</p>
-      <p>My core expertise: <strong>PHP (Laravel, Yii, CodeIgniter)</strong>, deep <strong>SQL Server & MySQL optimization</strong>, and scalable REST API design. I build complex systems — multi-branch POS, real-time inventory, automated dispatch, and accounting workflows.</p>
-      <p>Currently expanding into <strong>Flutter mobile development</strong> for Android & iOS, and connecting <strong>Power BI dashboards</strong> to ERP data — turning business operations into real-time insight.</p>
-      <p>Beyond code, I mentor developers, establish coding standards, and drive agile workflows that keep teams delivering high-quality software on time.</p>
+      <p>I'm <strong>Sarfaraz Ahmad</strong> — a Full Stack Developer and Team Lead at <strong>Cartzlink, Karachi</strong>. Since 2019, I've been architecting and leading enterprise ERP systems powering retail and franchise operations across Pakistan.</p>
+      <p>My core expertise: <strong>PHP (Laravel, Yii, CodeIgniter)</strong>, deep <strong>SQL Server & MySQL optimization</strong>, and scalable REST API design. I build systems that grow — multi-branch POS, real-time inventory, automated dispatch, and accounting workflows.</p>
+      <p>Currently expanding into <strong>Flutter mobile development</strong> for Android & iOS, and connecting <strong>Power BI dashboards</strong> to ERP data — turning business operations into real-time, actionable insight.</p>
+      <p>Beyond code, I mentor developers, establish coding standards, and drive agile workflows that keep teams delivering high-quality software on time and within scope.</p>
       <div class="ab-quote"><p>// Fast learner. Problem solver. Team builder. Delivering high-performance software since day one.</p></div>
     </div>
     <div class="rvr">
       <div class="code-card">
-        <div class="code-head">
-          <div class="cdot r"></div><div class="cdot y"></div><div class="cdot g"></div>
-          <span>profile.json</span>
-        </div>
+        <div class="code-head"><div class="cdot r"></div><div class="cdot y"></div><div class="cdot g"></div><span>profile.json</span></div>
         <div class="code-body">
           <div class="irow"><span class="ik">Name</span><span class="iv">Sarfaraz Ahmad</span></div>
           <div class="irow"><span class="ik">Role</span><span class="iv">Full Stack Developer</span></div>
           <div class="irow"><span class="ik">Position</span><span class="iv">Team Lead @ Cartzlink</span></div>
-          <div class="irow"><span class="ik">Location</span><span class="iv">Karachi, Pakistan 🇵🇰</span></div>
+          <div class="irow"><span class="ik">Location</span><span class="iv">Karachi, PK 🇵🇰</span></div>
           <div class="irow"><span class="ik">Phone</span><span class="iv"><a href="tel:03162659900">0316-2659900</a></span></div>
           <div class="irow"><span class="ik">Email</span><span class="iv"><a href="mailto:sarfaraza19990@gmail.com">sarfaraza19990@gmail.com</a></span></div>
           <div class="irow"><span class="ik">LinkedIn</span><span class="iv"><a href="https://linkedin.com/in/sarfaraz-ahmad-511a46238" target="_blank">sarfaraz-ahmad</a></span></div>
           <div class="irow"><span class="ik">Experience</span><span class="iv">5+ Years</span></div>
-          <div class="irow"><span class="ik">Education</span><span class="iv">Aptech ADSE · Virtual Uni</span></div>
+          <div class="irow"><span class="ik">Education</span><span class="iv">Aptech ADSE · VU</span></div>
           <div class="irow"><span class="ik">Languages</span><span class="iv">Urdu · English</span></div>
           <div class="irow"><span class="ik">Status</span><span class="iv alive">Open to Work</span></div>
         </div>
@@ -947,140 +710,88 @@ body.no-motion .rv,.no-motion .rvl,.no-motion .rvr,.no-motion .stg>*{opacity:1!i
   </div>
 </section>
 
-<!-- ═══ SKILLS ═══ -->
+<!-- ═══════ SKILLS ═══════ -->
 <section id="skills" class="sec">
   <div class="sec-ey rv"><span class="sec-num">// 02</span><h2 class="sec-t">Skills</h2><div class="sec-line"></div></div>
   <div class="sk-bento stg">
-    <div class="sk-card s2">
-      <svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-      <div class="sk-ti">Backend Development</div>
-      <div class="sk-chips"><span class="sk-chip">PHP</span><span class="sk-chip">Laravel</span><span class="sk-chip">Yii</span><span class="sk-chip">CodeIgniter</span><span class="sk-chip">MVC</span><span class="sk-chip">.NET</span></div>
-    </div>
-    <div class="sk-card s2">
-      <svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-      <div class="sk-ti">Databases</div>
-      <div class="sk-chips"><span class="sk-chip">MySQL</span><span class="sk-chip">SQL Server</span><span class="sk-chip">MariaDB</span><span class="sk-chip">Indexing</span><span class="sk-chip">Perf Tuning</span></div>
-    </div>
-    <div class="sk-card feat">
-      <div class="sk-big">5+</div>
-      <svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      <div class="sk-ti">ERP Systems</div>
-      <div class="sk-chips"><span class="sk-chip">Sales</span><span class="sk-chip">Inventory</span><span class="sk-chip">Accounts</span><span class="sk-chip">POS</span><span class="sk-chip">Dispatch</span><span class="sk-chip">Custom Modules</span></div>
-    </div>
-    <div class="sk-card s2">
-      <svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-      <div class="sk-ti">Mobile Apps</div>
-      <div class="sk-chips"><span class="sk-chip">Flutter</span><span class="sk-chip">React Native</span><span class="sk-chip">Android</span><span class="sk-chip">iOS</span></div>
-    </div>
-    <div class="sk-card s2">
-      <svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <div class="sk-ti">API & Integrations</div>
-      <div class="sk-chips"><span class="sk-chip">REST APIs</span><span class="sk-chip">Webhooks</span><span class="sk-chip">Shopify</span><span class="sk-chip">WooCommerce</span><span class="sk-chip">WordPress</span></div>
-    </div>
-    <div class="sk-card s3">
-      <svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      <div class="sk-ti">Data & DevOps</div>
-      <div class="sk-chips"><span class="sk-chip">Power BI</span><span class="sk-chip">Python</span><span class="sk-chip">Git/SVN</span><span class="sk-chip">Linux</span><span class="sk-chip">Cron Jobs</span><span class="sk-chip">SSL</span></div>
-    </div>
-    <div class="sk-card s3">
-      <svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <div class="sk-ti">Security</div>
-      <div class="sk-chips"><span class="sk-chip">RBAC</span><span class="sk-chip">Encryption</span><span class="sk-chip">Secure APIs</span><span class="sk-chip">PowerShell</span><span class="sk-chip">SQL Backup</span><span class="sk-chip">Auth Systems</span></div>
-    </div>
+    <div class="sk-card s2"><svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><div class="sk-ti">Backend Development</div><div class="sk-chips"><span class="sk-chip">PHP</span><span class="sk-chip">Laravel</span><span class="sk-chip">Yii</span><span class="sk-chip">CodeIgniter</span><span class="sk-chip">MVC</span><span class="sk-chip">.NET</span></div></div>
+    <div class="sk-card s2"><svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg><div class="sk-ti">Databases</div><div class="sk-chips"><span class="sk-chip">MySQL</span><span class="sk-chip">SQL Server</span><span class="sk-chip">MariaDB</span><span class="sk-chip">Indexing</span><span class="sk-chip">Perf Tuning</span></div></div>
+    <div class="sk-card feat"><div class="sk-big">5+</div><svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><div class="sk-ti">ERP Systems</div><div class="sk-chips"><span class="sk-chip">Sales</span><span class="sk-chip">Inventory</span><span class="sk-chip">Accounts</span><span class="sk-chip">POS</span><span class="sk-chip">Dispatch</span><span class="sk-chip">Custom Modules</span></div></div>
+    <div class="sk-card s2"><svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><div class="sk-ti">Mobile Apps</div><div class="sk-chips"><span class="sk-chip">Flutter</span><span class="sk-chip">React Native</span><span class="sk-chip">Android</span><span class="sk-chip">iOS</span></div></div>
+    <div class="sk-card s2"><svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><div class="sk-ti">API & Integrations</div><div class="sk-chips"><span class="sk-chip">REST APIs</span><span class="sk-chip">Webhooks</span><span class="sk-chip">Shopify</span><span class="sk-chip">WooCommerce</span></div></div>
+    <div class="sk-card s3"><svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><div class="sk-ti">Data & DevOps</div><div class="sk-chips"><span class="sk-chip">Power BI</span><span class="sk-chip">Python</span><span class="sk-chip">Git/SVN</span><span class="sk-chip">Linux</span><span class="sk-chip">Cron Jobs</span><span class="sk-chip">SSL</span></div></div>
+    <div class="sk-card s3"><svg class="sk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div class="sk-ti">Security</div><div class="sk-chips"><span class="sk-chip">RBAC</span><span class="sk-chip">Encryption</span><span class="sk-chip">Secure APIs</span><span class="sk-chip">PowerShell</span><span class="sk-chip">SQL Backup</span></div></div>
   </div>
 </section>
 
-<!-- ═══ PROJECTS ═══ -->
+<!-- ═══════ PROJECTS ═══════ -->
 <section id="projects" class="sec alt">
   <div class="sec-ey rv"><span class="sec-num">// 03</span><h2 class="sec-t">Projects</h2><div class="sec-line"></div></div>
-  <p class="proj-hint rv">drag to explore</p>
-  <div class="proj-scroll rv" id="ps">
-    <div class="proj-row">
-      <div class="proj-card"><div class="proj-head"><div class="proj-n">01</div><div class="proj-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">SQL Server</span><span class="proj-tag">ERP</span></div><div class="proj-ti">Retail POS & ERP</div><div class="proj-desc">End-to-end ERP + POS for fashion and wholesale brands — automated sales, inventory, dispatch, and full accounting workflows for retail clients.</div></div><div class="proj-foot"><span class="proj-yr">2019 – Present</span></div></div>
-      <div class="proj-card"><div class="proj-head"><div class="proj-n">02</div><div class="proj-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Flutter</span><span class="proj-tag">Laravel API</span><span class="proj-tag">Mobile</span></div><div class="proj-ti">Order Booking App</div><div class="proj-desc">Mobile-first Flutter app for field sales teams — real-time order placement, live tracking, and backend sync on Android & iOS.</div></div><div class="proj-foot"><span class="proj-yr">2023 – Present</span></div></div>
-      <div class="proj-card"><div class="proj-head"><div class="proj-n">03</div><div class="proj-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">CodeIgniter</span><span class="proj-tag">MySQL</span><span class="proj-tag">Power BI</span></div><div class="proj-ti">Swirl Style Platform</div><div class="proj-desc">Full operational platform for fashion brand launch — inventory, dispatch automation, and Power BI reporting for business efficiency.</div></div><div class="proj-foot"><span class="proj-yr">2022</span></div></div>
-      <div class="proj-card"><div class="proj-head"><div class="proj-n">04</div><div class="proj-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Yii</span><span class="proj-tag">Cron Jobs</span><span class="proj-tag">Automation</span></div><div class="proj-ti">Sync Automation</div><div class="proj-desc">Automated modules for summary generation, order synchronization, and duplicate detection — reducing manual workload drastically.</div></div><div class="proj-foot"><span class="proj-yr">2021 – 2023</span></div></div>
-      <div class="proj-card"><div class="proj-head"><div class="proj-n">05</div><div class="proj-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Shopify</span><span class="proj-tag">WooCommerce</span><span class="proj-tag">REST</span></div><div class="proj-ti">E-Commerce API Bridge</div><div class="proj-desc">RESTful integrations linking Shopify, WooCommerce, and payment gateways to ERP — unifying multi-channel retail operations.</div></div><div class="proj-foot"><span class="proj-yr">2021 – 2022</span></div></div>
-      <div class="proj-card"><div class="proj-head"><div class="proj-n">06</div><div class="proj-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div></div><div class="proj-body"><div class="proj-tags"><span class="proj-tag">Flutter</span><span class="proj-tag">PHP</span><span class="proj-tag">Community</span></div><div class="proj-ti">Jinn Social Platform</div><div class="proj-desc">Community app with posts, likes, media uploads, user accounts and engagement. Flutter frontend + scalable PHP backend.</div></div><div class="proj-foot"><span class="proj-yr">2023 – 2024</span></div></div>
-    </div>
+  <!-- Filter Tabs -->
+  <div class="proj-tabs rv" id="proj-tabs">
+    <button class="proj-tab on" data-cat="all">All</button>
+    <button class="proj-tab" data-cat="erp">ERP & POS</button>
+    <button class="proj-tab" data-cat="mobile">Mobile</button>
+    <button class="proj-tab" data-cat="api">API</button>
+    <button class="proj-tab" data-cat="social">Social</button>
   </div>
+  <!-- Project Grid -->
+  <div class="proj-grid rv" id="proj-grid"></div>
 </section>
 
-<!-- ═══ EXPERIENCE ═══ -->
+<!-- ═══════ EXPERIENCE ═══════ -->
 <section id="experience" class="sec">
   <div class="sec-ey rv"><span class="sec-num">// 04</span><h2 class="sec-t">Experience</h2><div class="sec-line"></div></div>
   <div class="exp-wrap">
     <div class="exp-aside rvl">
       <div class="exp-co">Cartzlink</div>
-      <div class="exp-title-role">Team Lead — ERP Systems & Development</div>
+      <div class="exp-role">Team Lead — ERP Systems & Dev</div>
       <div class="exp-period">// 2019 — Present</div>
-      <div class="exp-live"><span class="live-d"></span> Currently Working</div>
+      <div class="exp-live"><span class="live-d"></span>Currently Working</div>
     </div>
     <div class="exp-items stg">
-      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div class="exp-it-t">Team Leadership</div></div><div class="exp-it-d">5+ years managing cross-functional development teams — delivering complex ERP projects on time with agile workflows, coding standards, and best practices.</div></div>
-      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><div class="exp-it-t">ERP Architecture</div></div><div class="exp-it-d">Led development and deployment of full ERP modules: Sales, Inventory, Dispatch, Accounts, and POS for retail and franchise clients across Pakistan.</div></div>
-      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><div class="exp-it-t">API & Integration</div></div><div class="exp-it-d">Architected RESTful APIs with Shopify, WordPress/WooCommerce, and third-party platforms — automating operations and reducing manual effort at scale.</div></div>
-      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><div class="exp-it-t">Flutter Mobile Dev</div></div><div class="exp-it-d">Driving development of Flutter-based Order Booking App for Android & iOS — enabling real-time order placement and backend synchronization for field sales teams.</div></div>
-      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><div class="exp-it-t">Business Intelligence</div></div><div class="exp-it-d">Integrated Power BI dashboards with ERP systems for real-time KPI tracking, business reporting, and data-driven decision-making.</div></div>
-      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div class="exp-it-t">Security & Performance</div></div><div class="exp-it-d">System performance tuning, RBAC implementation, encryption, and PowerShell automation for SQL Server backups — secure, scalable architecture.</div></div>
+      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div class="exp-it-t">Team Leadership</div></div><div class="exp-it-d">5+ years managing cross-functional dev teams — delivering complex ERP projects on time with agile workflows, coding standards, and best practices.</div></div>
+      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><div class="exp-it-t">ERP Architecture</div></div><div class="exp-it-d">Led development of full ERP modules: Sales, Inventory, Dispatch, Accounts, POS for retail and franchise clients across Pakistan.</div></div>
+      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><div class="exp-it-t">API & Integration</div></div><div class="exp-it-d">Architected RESTful APIs with Shopify, WordPress/WooCommerce, and third-party platforms — automating operations at scale.</div></div>
+      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><div class="exp-it-t">Flutter Mobile Dev</div></div><div class="exp-it-d">Building Flutter Order Booking App for Android & iOS — real-time order placement and backend sync for field sales teams.</div></div>
+      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><div class="exp-it-t">Business Intelligence</div></div><div class="exp-it-d">Integrated Power BI dashboards with ERP for real-time KPI tracking and data-driven decision-making.</div></div>
+      <div class="exp-it"><div class="exp-it-hd"><svg class="exp-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div class="exp-it-t">Security & Performance</div></div><div class="exp-it-d">System tuning, RBAC, encryption, PowerShell automation for SQL Server backups — secure, scalable architecture.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ ACHIEVEMENTS ═══ -->
+<!-- ═══════ ACHIEVEMENTS ═══════ -->
 <section id="achievements" class="sec alt">
   <div class="sec-ey rv"><span class="sec-num">// 05</span><h2 class="sec-t">Achievements</h2><div class="sec-line"></div></div>
   <div class="ach-grid stg">
     <div class="ach-card"><div class="ach-ghost">01</div><svg class="ach-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg><div class="ach-ti">Promoted to Team Lead</div><div class="ach-desc">Recognized for technical excellence and consistent delivery. Promoted to lead cross-functional teams building enterprise ERP solutions for retail and franchise clients.</div></div>
-    <div class="ach-card"><div class="ach-ghost">02</div><svg class="ach-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><div class="ach-ti">Shopify & WooCommerce APIs</div><div class="ach-desc">Led seamless API integrations with major e-commerce platforms — significantly reducing manual processing and improving real-time data accuracy across systems.</div></div>
-    <div class="ach-card"><div class="ach-ghost">03</div><svg class="ach-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><div class="ach-ti">PowerShell SQL Automation</div><div class="ach-desc">Built automated SQL Server backup systems and scheduled tasks using PowerShell — improving database uptime, reliability, and disaster recovery readiness.</div></div>
-    <div class="ach-card"><div class="ach-ghost">04</div><svg class="ach-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg><div class="ach-ti">ERP & POS Optimization</div><div class="ach-desc">Delivered critical ERP module enhancements and POS system optimizations recognized by multiple clients for measurably improving daily business operations.</div></div>
+    <div class="ach-card"><div class="ach-ghost">02</div><svg class="ach-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><div class="ach-ti">Shopify & WooCommerce APIs</div><div class="ach-desc">Led seamless API integrations with major e-commerce platforms — reducing manual operations and improving real-time data accuracy across systems.</div></div>
+    <div class="ach-card"><div class="ach-ghost">03</div><svg class="ach-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><div class="ach-ti">PowerShell SQL Automation</div><div class="ach-desc">Built automated SQL Server backup systems and scheduled tasks using PowerShell — improving database uptime and disaster recovery readiness.</div></div>
+    <div class="ach-card"><div class="ach-ghost">04</div><svg class="ach-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg><div class="ach-ti">ERP & POS Optimization</div><div class="ach-desc">Delivered critical ERP module enhancements and POS optimizations recognized by multiple clients for measurably improving daily business operations.</div></div>
   </div>
 </section>
 
-<!-- ═══ EDUCATION ═══ -->
+<!-- ═══════ EDUCATION ═══════ -->
 <section id="education" class="sec">
   <div class="sec-ey rv"><span class="sec-num">// 06</span><h2 class="sec-t">Education</h2><div class="sec-line"></div></div>
   <div class="edu-grid stg">
-    <div class="edu-card">
-      <div class="edu-yr">// APR 2021 – MAY 2024</div>
-      <div class="edu-name">Aptech Computer Education</div>
-      <div class="edu-desc">Aptech Prime 2.2 Diploma (ADSE) — 3-year professional program in software engineering, full-stack development, databases, and project management.</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-yr">// Currently Enrolled</div>
-      <div class="edu-name">Virtual University</div>
-      <div class="edu-desc">Bachelor's Program in Computer Science — pursuing higher education alongside a full-time professional career in software development.</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-yr">// JUN – AUG 2024</div>
-      <div class="edu-name">Saudagran Foundation</div>
-      <div class="edu-desc">Entrepreneurship program via @KamyabCareer in collaboration with Delhi Punjabi Saudagran Foundation (DPSF) — first project successfully completed.</div>
-    </div>
+    <div class="edu-card"><div class="edu-yr">// APR 2021 – MAY 2024</div><div class="edu-name">Aptech Computer Education</div><div class="edu-desc">Aptech Prime 2.2 Diploma (ADSE) — 3-year professional software engineering & full-stack development program.</div></div>
+    <div class="edu-card"><div class="edu-yr">// Currently Enrolled</div><div class="edu-name">Virtual University</div><div class="edu-desc">Bachelor's in Computer Science — ongoing alongside a full-time professional career in software development.</div></div>
+    <div class="edu-card"><div class="edu-yr">// JUN – AUG 2024</div><div class="edu-name">Saudagran Foundation</div><div class="edu-desc">Entrepreneurship via @KamyabCareer with Delhi Punjabi Saudagran Foundation (DPSF) — successfully completed.</div></div>
   </div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
+<!-- ═══════ CONTACT ═══════ -->
 <section id="contact">
-  <div class="c-glow"></div>
-  <div class="c-bg-txt">HIRE ME</div>
+  <div class="c-glow"></div><div class="c-bg-txt">HIRE ME</div>
   <div class="c-inner">
     <p class="c-pre rv">// Let's work together</p>
     <h2 class="c-h rv">GET IN<br>TOUCH</h2>
     <p class="c-sub rv">Open to new opportunities, freelance projects, or a great engineering conversation.<br>Based in Karachi — available remotely worldwide.</p>
     <div class="c-btns rv">
-      <a href="mailto:sarfaraza19990@gmail.com" class="btn-fill">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Email Me
-      </a>
-      <a href="tel:03162659900" class="btn-ghost">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        0316-2659900
-      </a>
-      <a href="https://linkedin.com/in/sarfaraz-ahmad-511a46238" target="_blank" class="btn-ghost">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
+      <a href="mailto:sarfaraza19990@gmail.com" class="btn-fill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email Me</a>
+      <a href="tel:03162659900" class="btn-ghost"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0316-2659900</a>
+      <a href="https://linkedin.com/in/sarfaraz-ahmad-511a46238" target="_blank" class="btn-ghost"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
     </div>
   </div>
 </section>
@@ -1090,16 +801,295 @@ body.no-motion .rv,.no-motion .rvl,.no-motion .rvr,.no-motion .stg>*{opacity:1!i
   <div class="fr">Built with precision</div>
 </footer>
 
+<!-- ═══════ PROJECT DETAIL MODAL ═══════ -->
+<div id="proj-modal">
+  <div class="modal-bg" onclick="closeModal()"></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <div class="modal-num" id="m-num"></div>
+        <div class="modal-tags" id="m-tags"></div>
+        <div class="modal-title" id="m-title"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-desc" id="m-desc"></p>
+      <div class="modal-meta" id="m-meta"></div>
+      <div class="modal-features"><h4>Key Features</h4><ul class="modal-feature-list" id="m-features"></ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ ADD PROJECT MODAL ═══════ -->
+<div id="add-modal">
+  <div class="modal-bg" onclick="closeAddModal()"></div>
+  <div class="add-modal-box">
+    <div class="add-modal-head">
+      <h3>Add New Project</h3>
+      <button class="modal-close" onclick="closeAddModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="add-form">
+      <div class="form-group"><label class="form-label">Project Title *</label><input class="form-input" id="f-title" placeholder="e.g. Inventory Management System"/></div>
+      <div class="form-group"><label class="form-label">Short Description *</label><input class="form-input" id="f-short" placeholder="One line summary..."/></div>
+      <div class="form-group"><label class="form-label">Full Description *</label><textarea class="form-textarea" id="f-desc" placeholder="Detailed project description..."></textarea></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Category *</label>
+          <select class="form-select" id="f-cat">
+            <option value="erp">ERP & POS</option>
+            <option value="mobile">Mobile</option>
+            <option value="api">API</option>
+            <option value="social">Social</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Year / Period *</label><input class="form-input" id="f-year" placeholder="e.g. 2024 or 2023–2024"/></div>
+      </div>
+      <div class="form-group"><label class="form-label">Tech Stack (comma separated) *</label><input class="form-input" id="f-tech" placeholder="Laravel, MySQL, Vue.js"/></div>
+      <div class="form-group"><label class="form-label">Key Features (one per line)</label><textarea class="form-textarea" id="f-features" placeholder="Real-time sync&#10;Multi-branch support&#10;Role-based access"></textarea></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Client / Company</label><input class="form-input" id="f-client" placeholder="Cartzlink"/></div>
+        <div class="form-group"><label class="form-label">Status</label>
+          <select class="form-select" id="f-status">
+            <option value="Completed">Completed</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Ongoing">Ongoing</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="form-cancel" onclick="closeAddModal()">Cancel</button>
+        <button class="form-submit" onclick="addProject()">Add Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-/* CURSOR */
+/* ═══════════════════════════════
+   PROJECT DATA
+═══════════════════════════════ */
+let projects = [
+  {
+    id:1, num:'01', cat:'erp',
+    title:'Retail POS & ERP',
+    short:'End-to-end ERP + POS for fashion and wholesale brands.',
+    desc:'Complete end-to-end ERP and POS solution designed for fashion and wholesale brands. Automated the entire business workflow — from sales and inventory to dispatch and accounting — enabling real-time visibility across all branches.',
+    tags:['Laravel','SQL Server','ERP','POS'],
+    year:'2019 – Present',
+    client:'Cartzlink',status:'Ongoing',
+    features:['Multi-branch POS with real-time sync','Automated inventory tracking and alerts','Sales reporting and analytics dashboard','Dispatch management with status tracking','Full accounts and ledger module','Role-based access control (RBAC)']
+  },
+  {
+    id:2, num:'02', cat:'mobile',
+    title:'Order Booking App',
+    short:'Flutter mobile app for field sales teams with real-time sync.',
+    desc:'Mobile-first Flutter application built for on-field sales representatives. Enables real-time order placement, live tracking of order status, and seamless backend synchronization — available on both Android and iOS.',
+    tags:['Flutter','Laravel API','Android','iOS'],
+    year:'2023 – Present',
+    client:'Cartzlink',status:'In Progress',
+    features:['Real-time order placement and tracking','Offline mode with sync on reconnect','Customer catalog with search and filters','Live inventory availability check','Order history and status updates','Push notifications for order status']
+  },
+  {
+    id:3, num:'03', cat:'erp',
+    title:'Swirl Style Platform',
+    short:'Full operational platform for fashion brand launch.',
+    desc:'Full operational business platform developed for the launch of Swirl Style, a fashion brand. Integrated inventory management, dispatch automation, and Power BI reporting to ensure smooth day-one operations.',
+    tags:['CodeIgniter','MySQL','Power BI'],
+    year:'2022',
+    client:'Swirl Style',status:'Completed',
+    features:['Product catalog and inventory management','Automated dispatch workflow','Power BI dashboard integration','Sales and revenue reporting','Supplier management module','Barcode scanning support']
+  },
+  {
+    id:4, num:'04', cat:'api',
+    title:'Sync Automation Modules',
+    short:'Automated modules for order sync and duplicate detection.',
+    desc:'Built a suite of automated modules that handle summary generation, order synchronization between systems, and intelligent duplicate record detection. Dramatically reduced manual data entry and improved accuracy across platforms.',
+    tags:['Yii','Cron Jobs','SQL Server','Automation'],
+    year:'2021 – 2023',
+    client:'Cartzlink',status:'Completed',
+    features:['Scheduled cron-based order sync','Duplicate record detection algorithm','Auto-generated daily/weekly summaries','Cross-platform data reconciliation','Error logging and alert system','Admin dashboard for sync status']
+  },
+  {
+    id:5, num:'05', cat:'api',
+    title:'E-Commerce API Bridge',
+    short:'RESTful API linking Shopify & WooCommerce to ERP.',
+    desc:'Designed and implemented a robust RESTful API bridge connecting Shopify, WooCommerce, and payment gateways directly to the internal ERP system. Unified multi-channel retail operations and eliminated manual order processing.',
+    tags:['Shopify API','WooCommerce','REST','Webhooks'],
+    year:'2021 – 2022',
+    client:'Cartzlink',status:'Completed',
+    features:['Bi-directional Shopify/WooCommerce sync','Real-time inventory push to e-commerce','Automated order import to ERP','Payment gateway reconciliation','Webhook event handling','Error retry and notification system']
+  },
+  {
+    id:6, num:'06', cat:'social',
+    title:'Jinn Social Platform',
+    short:'Community app with posts, media uploads, and engagement.',
+    desc:'Developed a full-featured community social platform called Jinn (Our Expression Inspired). Users can create accounts, post content, upload media, like and comment — all powered by a Flutter frontend and a scalable PHP backend.',
+    tags:['Flutter','PHP','MySQL','Community'],
+    year:'2023 – 2024',
+    client:'Personal Venture',status:'Completed',
+    features:['User accounts and profile management','Post creation with media uploads','Like, comment, and share system','Real-time notifications','Content moderation tools','Scalable feed algorithm']
+  }
+];
+
+/* ═══════════════════════════════
+   RENDER PROJECTS
+═══════════════════════════════ */
+function renderProjects(cat='all') {
+  const grid = document.getElementById('proj-grid');
+  const filtered = cat==='all' ? projects : projects.filter(p=>p.cat===cat);
+  
+  let html = '';
+  filtered.forEach((p,i) => {
+    html += `
+    <div class="proj-card" onclick="openModal(${p.id})" style="cursor:pointer">
+      <div class="proj-card-inner">
+        <div class="proj-n">${p.num}</div>
+        <div class="proj-tags">${p.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div>
+        <div class="proj-ti">${p.title}</div>
+        <div class="proj-short">${p.short}</div>
+      </div>
+      <div class="proj-foot">
+        <span class="proj-yr">${p.year}</span>
+        <span class="proj-view">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+      </div>
+    </div>`;
+  });
+
+  // Add Project Card
+  html += `
+  <div class="proj-add-card" onclick="openAddModal()">
+    <div class="proj-add-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </div>
+    <div class="proj-add-txt">Add New Project</div>
+  </div>`;
+
+  grid.innerHTML = html;
+  
+  // re-observe new cards
+  grid.querySelectorAll('.proj-card,.proj-add-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cc.style.width='54px';cc.style.height='54px';cd.style.transform='translate(-50%,-50%) scale(2.5)';});
+    el.addEventListener('mouseleave',()=>{cc.style.width='36px';cc.style.height='36px';cd.style.transform='translate(-50%,-50%) scale(1)';});
+  });
+}
+
+/* ═══════════════════════════════
+   OPEN PROJECT MODAL
+═══════════════════════════════ */
+function openModal(id) {
+  const p = projects.find(x=>x.id===id);
+  if(!p) return;
+  document.getElementById('m-num').textContent = p.num;
+  document.getElementById('m-title').textContent = p.title;
+  document.getElementById('m-tags').innerHTML = p.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('');
+  document.getElementById('m-desc').textContent = p.desc;
+  document.getElementById('m-meta').innerHTML = `
+    <div class="modal-meta-item"><div class="modal-meta-k">Year</div><div class="modal-meta-v">${p.year}</div></div>
+    <div class="modal-meta-item"><div class="modal-meta-k">Client</div><div class="modal-meta-v">${p.client}</div></div>
+    <div class="modal-meta-item"><div class="modal-meta-k">Category</div><div class="modal-meta-v">${p.cat.toUpperCase()}</div></div>
+    <div class="modal-meta-item"><div class="modal-meta-k">Status</div><div class="modal-meta-v">${p.status}</div></div>`;
+  document.getElementById('m-features').innerHTML = p.features.map(f=>`<li>${f}</li>`).join('');
+  document.getElementById('proj-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('proj-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ═══════════════════════════════
+   ADD PROJECT MODAL
+═══════════════════════════════ */
+function openAddModal(){
+  document.getElementById('add-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeAddModal(){
+  document.getElementById('add-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function addProject(){
+  const title = document.getElementById('f-title').value.trim();
+  const short  = document.getElementById('f-short').value.trim();
+  const desc   = document.getElementById('f-desc').value.trim();
+  const cat    = document.getElementById('f-cat').value;
+  const year   = document.getElementById('f-year').value.trim();
+  const tech   = document.getElementById('f-tech').value.trim();
+  const feats  = document.getElementById('f-features').value.trim();
+  const client = document.getElementById('f-client').value.trim() || 'Personal';
+  const status = document.getElementById('f-status').value;
+
+  if(!title||!short||!desc||!year||!tech){
+    // highlight empty fields
+    [['f-title',title],['f-short',short],['f-desc',desc],['f-year',year],['f-tech',tech]].forEach(([id,val])=>{
+      if(!val) document.getElementById(id).style.borderColor='rgba(255,61,138,.6)';
+      else document.getElementById(id).style.borderColor='';
+    });
+    return;
+  }
+
+  const newProj = {
+    id: Date.now(),
+    num: String(projects.length+1).padStart(2,'0'),
+    cat, title, short, desc, year, client, status,
+    tags: tech.split(',').map(t=>t.trim()).filter(Boolean),
+    features: feats ? feats.split('\n').filter(Boolean) : ['Project feature details']
+  };
+  projects.push(newProj);
+
+  // clear form
+  ['f-title','f-short','f-desc','f-year','f-tech','f-features','f-client'].forEach(id=>{
+    document.getElementById(id).value='';
+    document.getElementById(id).style.borderColor='';
+  });
+  document.getElementById('f-cat').value='erp';
+  document.getElementById('f-status').value='Completed';
+
+  closeAddModal();
+  // switch to all and re-render
+  document.querySelectorAll('.proj-tab').forEach(t=>t.classList.remove('on'));
+  document.querySelector('.proj-tab[data-cat="all"]').classList.add('on');
+  renderProjects('all');
+  // scroll to new card briefly
+  setTimeout(()=>{
+    const cards=document.querySelectorAll('.proj-card');
+    if(cards.length) cards[cards.length-1].scrollIntoView({behavior:'smooth',block:'center'});
+  },100);
+}
+
+/* ═══════════════════════════════
+   FILTER TABS
+═══════════════════════════════ */
+document.getElementById('proj-tabs').addEventListener('click',e=>{
+  const btn = e.target.closest('.proj-tab');
+  if(!btn) return;
+  document.querySelectorAll('.proj-tab').forEach(t=>t.classList.remove('on'));
+  btn.classList.add('on');
+  renderProjects(btn.dataset.cat);
+});
+
+// Close modals on Escape
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeModal();closeAddModal();}
+});
+
+/* ═══════════════════════════════
+   CURSOR
+═══════════════════════════════ */
 const cd=document.getElementById('cd'),cc=document.getElementById('cc');
 let mx=0,my=0,cx=0,cy=0,con=true;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(con){cd.style.left=mx+'px';cd.style.top=my+'px';}});
 (function loop(){cx+=(mx-cx)*.1;cy+=(my-cy)*.1;if(con){cc.style.left=cx+'px';cc.style.top=cy+'px';}requestAnimationFrame(loop);})();
-document.querySelectorAll('a,button,.sk-card,.proj-card,.ach-card,.exp-it,.edu-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cc.style.width='54px';cc.style.height='54px';cd.style.transform='translate(-50%,-50%) scale(2.5)';});
-  el.addEventListener('mouseleave',()=>{cc.style.width='36px';cc.style.height='36px';cd.style.transform='translate(-50%,-50%) scale(1)';});
-});
+function bindCursor(){
+  document.querySelectorAll('a,button,.sk-card,.proj-card,.proj-add-card,.ach-card,.exp-it,.edu-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cc.style.width='54px';cc.style.height='54px';cd.style.transform='translate(-50%,-50%) scale(2.5)';});
+    el.addEventListener('mouseleave',()=>{cc.style.width='36px';cc.style.height='36px';cd.style.transform='translate(-50%,-50%) scale(1)';});
+  });
+}
 document.body.style.cursor='none';
 
 /* PROGRESS */
@@ -1120,18 +1110,11 @@ window.addEventListener('scroll',()=>{
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');}),{threshold:.1});
 document.querySelectorAll('.rv,.rvl,.rvr,.stg').forEach(el=>obs.observe(el));
 
-/* DRAG SCROLL */
-const ps=document.getElementById('ps');
-let drag=false,sx,sl;
-ps.addEventListener('mousedown',e=>{drag=true;sx=e.pageX-ps.offsetLeft;sl=ps.scrollLeft;ps.style.cursor='grabbing';});
-document.addEventListener('mouseup',()=>{drag=false;if(ps)ps.style.cursor='grab';});
-ps.addEventListener('mousemove',e=>{if(!drag)return;e.preventDefault();ps.scrollLeft=sl-(e.pageX-ps.offsetLeft-sx)*1.4;});
-
 /* SETTINGS */
 const sb=document.getElementById('sbtn'),sp=document.getElementById('spanel');
-let open=false;
-sb.addEventListener('click',e=>{e.stopPropagation();open=!open;sp.classList.toggle('open',open);sb.classList.toggle('open',open);});
-document.addEventListener('click',e=>{if(!sp.contains(e.target)&&e.target!==sb){open=false;sp.classList.remove('open');sb.classList.remove('open');}});
+let sopen=false;
+sb.addEventListener('click',e=>{e.stopPropagation();sopen=!sopen;sp.classList.toggle('open',sopen);sb.classList.toggle('open',sopen);});
+document.addEventListener('click',e=>{if(!sp.contains(e.target)&&e.target!==sb){sopen=false;sp.classList.remove('open');sb.classList.remove('open');}});
 
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
@@ -1154,12 +1137,12 @@ document.querySelectorAll('.sp-btn[data-r]').forEach(b=>b.addEventListener('clic
 
 let mon=true,cron=true,gon=true;
 document.getElementById('t-mo').addEventListener('click',function(){mon=!mon;this.classList.toggle('on',mon);document.body.classList.toggle('no-motion',!mon);});
-document.getElementById('t-cu').addEventListener('click',function(){
-  cron=!cron;this.classList.toggle('on',cron);con=cron;
-  cd.style.opacity=cron?'1':'0';cc.style.opacity=cron?'1':'0';
-  document.body.style.cursor=cron?'none':'auto';
-});
+document.getElementById('t-cu').addEventListener('click',function(){cron=!cron;this.classList.toggle('on',cron);con=cron;cd.style.opacity=cron?'1':'0';cc.style.opacity=cron?'1':'0';document.body.style.cursor=cron?'none':'auto';});
 document.getElementById('t-gr').addEventListener('click',function(){gon=!gon;this.classList.toggle('on',gon);document.getElementById('grain').style.opacity=gon?'.3':'0';});
+
+/* INIT */
+renderProjects('all');
+bindCursor();
 </script>
 </body>
 </html>
