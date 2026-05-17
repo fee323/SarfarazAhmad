@@ -1,0 +1,284 @@
+{
+  "profile": {
+    "name": "Sarfaraz Ahmad",
+    "title": "Full Stack Developer",
+    "subtitle": "& Team Lead",
+    "role": "Team Lead @ Cartzlink",
+    "location": "Karachi, Pakistan",
+    "phone": "0316-2659900",
+    "email": "sarfaraza19990@gmail.com",
+    "linkedin": "https://linkedin.com/in/sarfaraz-ahmad-511a46238",
+    "photo": "sarfaraz.jpg",
+    "available": true,
+    "bio": [
+      "I'm <strong>Sarfaraz Ahmad</strong> — a Full Stack Developer and Team Lead at <strong>Cartzlink, Karachi</strong>. Since 2019, I've been architecting and leading enterprise ERP systems powering retail and franchise operations across Pakistan.",
+      "My core expertise: <strong>PHP (Laravel, Yii, CodeIgniter)</strong>, deep <strong>SQL Server & MySQL optimization</strong>, and scalable REST API design. I build systems that grow — multi-branch POS, real-time inventory, automated dispatch, and accounting workflows.",
+      "Currently expanding into <strong>Flutter mobile development</strong> for Android & iOS, and connecting <strong>Power BI dashboards</strong> to ERP data — turning business operations into real-time, actionable insight.",
+      "Beyond code, I mentor developers, establish coding standards, and drive agile workflows that keep teams delivering high-quality software on time and within scope."
+    ],
+    "quote": "Fast learner. Problem solver. Team builder. Delivering high-performance software since day one.",
+    "stats": [
+      { "value": "5", "suffix": "+", "label": "Years Exp" },
+      { "value": "10", "suffix": "+", "label": "Projects" },
+      { "value": "3", "suffix": "", "label": "Platforms" }
+    ],
+    "education": "Aptech ADSE · VU",
+    "languages": "Urdu · English"
+  },
+
+  "skills": [
+    {
+      "title": "Backend Development",
+      "span": 2,
+      "chips": ["PHP", "Laravel", "Yii", "CodeIgniter", "MVC", ".NET"]
+    },
+    {
+      "title": "Databases",
+      "span": 2,
+      "chips": ["MySQL", "SQL Server", "MariaDB", "Indexing", "Perf Tuning"]
+    },
+    {
+      "title": "ERP Systems",
+      "span": 3,
+      "feat": true,
+      "big": "5+",
+      "chips": ["Sales", "Inventory", "Accounts", "POS", "Dispatch", "Custom Modules"]
+    },
+    {
+      "title": "Mobile Apps",
+      "span": 2,
+      "chips": ["Flutter", "React Native", "Android", "iOS"]
+    },
+    {
+      "title": "API & Integrations",
+      "span": 2,
+      "chips": ["REST APIs", "Webhooks", "Shopify", "WooCommerce"]
+    },
+    {
+      "title": "Data & DevOps",
+      "span": 3,
+      "chips": ["Power BI", "Python", "Git/SVN", "Linux", "Cron Jobs", "SSL"]
+    },
+    {
+      "title": "Security",
+      "span": 3,
+      "chips": ["RBAC", "Encryption", "Secure APIs", "PowerShell", "SQL Backup"]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "num": "01",
+      "cat": "erp",
+      "title": "Retail POS & ERP",
+      "short": "End-to-end ERP + POS for fashion and wholesale brands.",
+      "desc": "Complete end-to-end ERP and POS solution designed for fashion and wholesale brands. Automated the entire business workflow — from sales and inventory to dispatch and accounting — enabling real-time visibility across all branches.",
+      "tags": ["Laravel", "SQL Server", "ERP", "POS"],
+      "year": "2019 – Present",
+      "client": "Cartzlink",
+      "status": "Ongoing",
+      "features": [
+        "Multi-branch POS with real-time sync",
+        "Automated inventory tracking and alerts",
+        "Sales reporting and analytics dashboard",
+        "Dispatch management with status tracking",
+        "Full accounts and ledger module",
+        "Role-based access control (RBAC)"
+      ]
+    },
+    {
+      "id": 2,
+      "num": "02",
+      "cat": "mobile",
+      "title": "Order Booking App",
+      "short": "Flutter mobile app for field sales teams with real-time sync.",
+      "desc": "Mobile-first Flutter application built for on-field sales representatives. Enables real-time order placement, live tracking of order status, and seamless backend synchronization — available on both Android and iOS.",
+      "tags": ["Flutter", "Laravel API", "Android", "iOS"],
+      "year": "2023 – Present",
+      "client": "Cartzlink",
+      "status": "In Progress",
+      "features": [
+        "Real-time order placement and tracking",
+        "Offline mode with sync on reconnect",
+        "Customer catalog with search and filters",
+        "Live inventory availability check",
+        "Order history and status updates",
+        "Push notifications for order status"
+      ]
+    },
+    {
+      "id": 3,
+      "num": "03",
+      "cat": "erp",
+      "title": "Swirl Style Platform",
+      "short": "Full operational platform for fashion brand launch.",
+      "desc": "Full operational business platform developed for the launch of Swirl Style, a fashion brand. Integrated inventory management, dispatch automation, and Power BI reporting to ensure smooth day-one operations.",
+      "tags": ["CodeIgniter", "MySQL", "Power BI"],
+      "year": "2022",
+      "client": "Swirl Style",
+      "status": "Completed",
+      "features": [
+        "Product catalog and inventory management",
+        "Automated dispatch workflow",
+        "Power BI dashboard integration",
+        "Sales and revenue reporting",
+        "Supplier management module",
+        "Barcode scanning support"
+      ]
+    },
+    {
+      "id": 4,
+      "num": "04",
+      "cat": "api",
+      "title": "Sync Automation Modules",
+      "short": "Automated modules for order sync and duplicate detection.",
+      "desc": "Built a suite of automated modules that handle summary generation, order synchronization between systems, and intelligent duplicate record detection. Dramatically reduced manual data entry and improved accuracy across platforms.",
+      "tags": ["Yii", "Cron Jobs", "SQL Server", "Automation"],
+      "year": "2021 – 2023",
+      "client": "Cartzlink",
+      "status": "Completed",
+      "features": [
+        "Scheduled cron-based order sync",
+        "Duplicate record detection algorithm",
+        "Auto-generated daily/weekly summaries",
+        "Cross-platform data reconciliation",
+        "Error logging and alert system",
+        "Admin dashboard for sync status"
+      ]
+    },
+    {
+      "id": 5,
+      "num": "05",
+      "cat": "api",
+      "title": "E-Commerce API Bridge",
+      "short": "RESTful API linking Shopify & WooCommerce to ERP.",
+      "desc": "Designed and implemented a robust RESTful API bridge connecting Shopify, WooCommerce, and payment gateways directly to the internal ERP system. Unified multi-channel retail operations and eliminated manual order processing.",
+      "tags": ["Shopify API", "WooCommerce", "REST", "Webhooks"],
+      "year": "2021 – 2022",
+      "client": "Cartzlink",
+      "status": "Completed",
+      "features": [
+        "Bi-directional Shopify/WooCommerce sync",
+        "Real-time inventory push to e-commerce",
+        "Automated order import to ERP",
+        "Payment gateway reconciliation",
+        "Webhook event handling",
+        "Error retry and notification system"
+      ]
+    },
+    {
+      "id": 6,
+      "num": "06",
+      "cat": "social",
+      "title": "Jinn Social Platform",
+      "short": "Community app with posts, media uploads, and engagement.",
+      "desc": "Developed a full-featured community social platform called Jinn (Our Expression Inspired). Users can create accounts, post content, upload media, like and comment — all powered by a Flutter frontend and a scalable PHP backend.",
+      "tags": ["Flutter", "PHP", "MySQL", "Community"],
+      "year": "2023 – 2024",
+      "client": "Personal Venture",
+      "status": "Completed",
+      "features": [
+        "User accounts and profile management",
+        "Post creation with media uploads",
+        "Like, comment, and share system",
+        "Real-time notifications",
+        "Content moderation tools",
+        "Scalable feed algorithm"
+      ]
+    }
+  ],
+
+  "experience": {
+    "company": "Cartzlink",
+    "role": "Team Lead — ERP Systems & Dev",
+    "period": "2019 — Present",
+    "current": true,
+    "items": [
+      {
+        "title": "Team Leadership",
+        "desc": "5+ years managing cross-functional dev teams — delivering complex ERP projects on time with agile workflows, coding standards, and best practices."
+      },
+      {
+        "title": "ERP Architecture",
+        "desc": "Led development of full ERP modules: Sales, Inventory, Dispatch, Accounts, POS for retail and franchise clients across Pakistan."
+      },
+      {
+        "title": "API & Integration",
+        "desc": "Architected RESTful APIs with Shopify, WordPress/WooCommerce, and third-party platforms — automating operations at scale."
+      },
+      {
+        "title": "Flutter Mobile Dev",
+        "desc": "Building Flutter Order Booking App for Android & iOS — real-time order placement and backend sync for field sales teams."
+      },
+      {
+        "title": "Business Intelligence",
+        "desc": "Integrated Power BI dashboards with ERP for real-time KPI tracking and data-driven decision-making."
+      },
+      {
+        "title": "Security & Performance",
+        "desc": "System tuning, RBAC, encryption, PowerShell automation for SQL Server backups — secure, scalable architecture."
+      }
+    ]
+  },
+
+  "achievements": [
+    {
+      "num": "01",
+      "title": "Promoted to Team Lead",
+      "desc": "Recognized for technical excellence and consistent delivery. Promoted to lead cross-functional teams building enterprise ERP solutions for retail and franchise clients."
+    },
+    {
+      "num": "02",
+      "title": "Shopify & WooCommerce APIs",
+      "desc": "Led seamless API integrations with major e-commerce platforms — reducing manual operations and improving real-time data accuracy across systems."
+    },
+    {
+      "num": "03",
+      "title": "PowerShell SQL Automation",
+      "desc": "Built automated SQL Server backup systems and scheduled tasks using PowerShell — improving database uptime and disaster recovery readiness."
+    },
+    {
+      "num": "04",
+      "title": "ERP & POS Optimization",
+      "desc": "Delivered critical ERP module enhancements and POS optimizations recognized by multiple clients for measurably improving daily business operations."
+    }
+  ],
+
+  "education": [
+    {
+      "year": "APR 2021 – MAY 2024",
+      "name": "Aptech Computer Education",
+      "desc": "Aptech Prime 2.2 Diploma (ADSE) — 3-year professional software engineering & full-stack development program."
+    },
+    {
+      "year": "Currently Enrolled",
+      "name": "Virtual University",
+      "desc": "Bachelor's in Computer Science — ongoing alongside a full-time professional career in software development."
+    },
+    {
+      "year": "JUN – AUG 2024",
+      "name": "Saudagran Foundation",
+      "desc": "Entrepreneurship via @KamyabCareer with Delhi Punjabi Saudagran Foundation (DPSF) — successfully completed."
+    }
+  ],
+
+  "gallery": [
+    {
+      "src": "gallery/photo1.jpg",
+      "caption": "Team at Cartzlink Office",
+      "type": "photo"
+    },
+    {
+      "src": "gallery/photo2.jpg",
+      "caption": "ERP Dashboard Demo",
+      "type": "photo"
+    },
+    {
+      "src": "gallery/video1.mp4",
+      "thumb": "gallery/video1-thumb.jpg",
+      "caption": "Order Booking App Demo",
+      "type": "video"
+    }
+  ]
+}
